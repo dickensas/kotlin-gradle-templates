@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kotlin Hello World - CommonJS</title>
+<script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/commonjs-require@1.4.6/commonjs-require.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/kotlin@1.3.50/kotlin.js"></script>
+<script>
+require.register("kotlin", function(exports, require, module){
+  module.exports = kotlin
+  window.module = module;
+})
+require("kotlin");
+</script>
+<script src="build/classes/kotlin/main/js-commonjs.js"></script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform").version("1.3.70-dev-730")
+    kotlin("js").version("1.3.70-dev-730")
 }
 
 repositories {
@@ -7,7 +7,7 @@ repositories {
 	maven{setUrl("https://dl.bintray.com/kotlin/kotlin-dev" )}
 }
 
-kotlin {
-	mingwX64("wasm32")
+dependencies {
+    implementation(kotlin("stdlib-js"))
 }
 

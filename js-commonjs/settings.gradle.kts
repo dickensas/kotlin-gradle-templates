@@ -7,4 +7,4 @@ pluginManagement {
         maven{setUrl("https://dl.bintray.com/kotlin/kotlin-dev" )}
     }
 }
-rootProject.name = "multiplatform"
+rootProject.name = "js-commonjs"
