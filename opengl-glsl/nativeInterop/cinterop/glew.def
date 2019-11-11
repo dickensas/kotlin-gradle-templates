@@ -1,0 +1,6 @@
+headers = GL\\glew.h GL\\wglew.h
+staticLibraries = libglew32.a glew32.dll
+package = glew
+libraryPaths = C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib C:\\msys64\\mingw64\\lib C:\\msys64\\mingw64\\bin
+linkerOpts = -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib -LC:\\msys64\\mingw64\\bin -lopengl32 -lglew32
+compilerOpts = -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib -LC:\\msys64\\mingw64\\bin
