@@ -49,12 +49,12 @@ fun main() {
     
     glfwSetWindowTitle(window, "OpenGL " + version.toByte().toChar());
     
-    val vertexArrayID = memScoped {
+    val vao = memScoped {
         val output = alloc<UIntVar>()
         glGenVertexArrays!!(1, output.ptr)
         output.value
     }
-    glBindVertexArray!!(vertexArrayID)
+    glBindVertexArray!!(vao)
     
     val vertex_array = floatArrayOf(
         -0.8f, -0.8f, 0.0f,
@@ -62,12 +62,12 @@ fun main() {
          0.0f,  0.8f, 0.0f
     )
     
-    val vertexBuffer = memScoped {
+    val vbo = memScoped {
         val output = alloc<UIntVar>()
         glGenBuffers!!(1, output.ptr)
         output.value
     }
-    glBindBuffer!!(GL_ARRAY_BUFFER.toUInt(), vertexBuffer)
+    glBindBuffer!!(GL_ARRAY_BUFFER.toUInt(), vbo)
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE)
     
@@ -107,7 +107,7 @@ fun main() {
         glUseProgram!!(pId)
         
         glEnableVertexAttribArray!!(0U)
-        glBindBuffer!!(GL_ARRAY_BUFFER.toUInt(), vertexBuffer)
+        glBindBuffer!!(GL_ARRAY_BUFFER.toUInt(), vbo)
         glVertexAttribPointer!!(
             0U,
             3,
