@@ -22,3 +22,6 @@ Then execute bellow task to start spring boot
      .\gradlew runReleaseExecutableLibgnuplot
 
 GLFW Based window with GLEW based Triangle will be displayed
+
+##Reference 
+[1 - Triangle by Dominaezzz](https://github.com/Dominaezzz/kgl-opengl-samples)
