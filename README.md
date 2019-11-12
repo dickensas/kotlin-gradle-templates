@@ -9,3 +9,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `sboot-wasm` - Kotlin Web Assembly Hello World! with Spring Boot as server
   * `coroutines-html` - KotlinX HTML with KotlinX coroutines delay
   * `cucumber` - Cucumber browser automation testing
+  * `opengl-glsl` - OpenGL GLSL using Kotlin GLFW+GLEW

@@ -56,12 +56,6 @@ fun main() {
     }
     glBindVertexArray!!(vao)
     
-    val vertex_array = floatArrayOf(
-        -0.8f, -0.8f, 0.0f,
-         0.8f, -0.8f, 0.0f,
-         0.0f,  0.8f, 0.0f
-    )
-    
     val vbo = memScoped {
         val output = alloc<UIntVar>()
         glGenBuffers!!(1, output.ptr)
@@ -70,6 +64,12 @@ fun main() {
     glBindBuffer!!(GL_ARRAY_BUFFER.toUInt(), vbo)
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE)
+    
+    val vertex_array = floatArrayOf(
+        -0.8f, -0.8f, 0.0f,
+         0.8f, -0.8f, 0.0f,
+         0.0f,  0.8f, 0.0f
+    )
     
     vertex_array.usePinned {
         glBufferData!!(GL_ARRAY_BUFFER.toUInt(), vertex_array.size.toLong() * 4, it.addressOf(0), GL_STATIC_DRAW.toUInt())
