@@ -1,4 +1,4 @@
-# kotlin-gradle-templates / opengl-glew-glfw
+# kotlin-gradle-templates / opengl-glsl
 Quick start kotlin multiplatform OpenGL GLEW+GLFW Basic Triangle using GLSL
 
 ## Usage
@@ -16,12 +16,12 @@ If you have wrapper for windows
 
      .\gradlew assemble
 
-Then execute bellow task to start spring boot
+Then execute bellow task to start the OpenGL Window
 
      .\gradlew copyDlls
      .\gradlew runReleaseExecutableLibgnuplot
 
 GLFW Based window with GLEW based Triangle will be displayed
 
-##Reference 
+## Reference
 [1 - Triangle by Dominaezzz](https://github.com/Dominaezzz/kgl-opengl-samples)
