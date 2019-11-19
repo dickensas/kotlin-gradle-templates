@@ -1,0 +1,5 @@
+headers = GLFW/glfw3.h GLFW/glfw3native.h
+package = glfw
+libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
+linkerOpts = -DGLFW_EXPOSE_NATIVE_WIN32 -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lgdi32 -lglfw3
+compilerOpts = -DGLFW_EXPOSE_NATIVE_WIN32 -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lgdi32 -lglfw3
