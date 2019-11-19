@@ -31,13 +31,13 @@ The app will open a windows and display a triangle
 
 **For better output**: fences, barrier, uniform buffer etc are mandatory as per Vulkan recommendations 
 
-##References
+## References
 
-Web: [vulkan-tutorial.com](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Base_code)
+**Web**: [vulkan-tutorial.com](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Base_code)
 
-GitHub: [Alexander Overvoorde](https://gist.github.com/Overv/7ac07356037592a121225172d7d78f2d)
+**GitHub**: [Alexander Overvoorde](https://gist.github.com/Overv/7ac07356037592a121225172d7d78f2d)
 
-CodeProject: [Igor Kushnarev](https://www.codeproject.com/Articles/1288159/Vulkan-API-with-Kotlin-Native-Project-Setup)
+**CodeProject**: [Igor Kushnarev](https://www.codeproject.com/Articles/1288159/Vulkan-API-with-Kotlin-Native-Project-Setup)
 
-GitLab: [Horribile](https://gitlab.com/Horribile/kvarc)
+**GitLab**: [Horribile](https://gitlab.com/Horribile/kvarc)
 
