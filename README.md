@@ -13,3 +13,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `opengl-glsl-glad` - OpenGL GLSL using Kotlin GLFW+GLAD
   * `vulkan-initialize` - Vulkan Initiate and check for success
   * `vulkan-triangle-glfw` - Vulkan Triangle example using windows GLFW
+  * `opengl-freeglut-freetype2` - OpenGL GLSL using Kotlin FreeGLUT+GLEW+FreeType2
