@@ -23,7 +23,7 @@ Then execute bellow task to start the OpenGL application
 GLFW Based window with GLEW and libpangocairo based Text rendering
 
 **Important Note:**
-  * Verify libcairo.a, librsvg-2.a available in the lib folder, install ruby accordingly by installing mingw-w64-x86_64-librsvg, mingw-w64-x86_64-cairo, mingw-w64-x86_64-glew, mingw-w64-x86_64-glfw
+  * Verify libcairo.a, librsvg-2.a available in the lib folder, install libraries accordingly by installing mingw-w64-x86_64-librsvg, mingw-w64-x86_64-cairo, mingw-w64-x86_64-glew, mingw-w64-x86_64-glfw
 
 
 ## References
