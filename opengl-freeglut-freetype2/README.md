@@ -26,7 +26,7 @@ FreeGlut+GLEW Based window with FreeType2 based text will be displayed in a wind
   * You will be needing FreeSans.ttf, 
 this font can be downloaded from the official download site [GNU Free Font](http://ftp.gnu.org/gnu/freefont/freefont-ttf.zip)
 and put it inside the exe folder 
-  * You need to execute this exe from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
+  * You need to execute this code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
 
 
 ## References

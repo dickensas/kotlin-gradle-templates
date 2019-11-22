@@ -23,7 +23,7 @@ Then execute bellow task to start the OpenGL application
 GLFW Based window with GLEW and libpangocairo based Text rendering
 
 **Important Note:**
-  * You need to execute this exe from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
+  * You need to execute this code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
 
 
 ## References

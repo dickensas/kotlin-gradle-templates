@@ -23,7 +23,7 @@ Then execute bellow task to start the OpenGL application
 FreeGlut+GLEW Based window with FreeType2 based text will be displayed in a windows
 
 **Important Note:**
-  * You need to execute this exe from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
+  * You need to execute code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
   * Verify libpython3.7.dll.a and Python.h in MSYS, install python accordingly
 
 ## References
