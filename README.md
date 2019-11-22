@@ -16,3 +16,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `opengl-freeglut-freetype2` - OpenGL GLSL using Kotlin FreeGLUT+GLEW+FreeType2
   * `opengl-pangocairo` - OpenGL GLEW using Kotlin libpangocairo Unicode Font Rendering
   * `opengl-cairo-rsvg` - OpenGL Kotlin librsvg SVF File Rendering
+  * `embed-python` - Embedding Python 3 or 2 in Kotlin
