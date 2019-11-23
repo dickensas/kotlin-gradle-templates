@@ -22,7 +22,6 @@ Then execute bellow task to start the OpenGL application
 
 You will get output as
 
-$ ./build/bin/libgnuplot/releaseExecutable/klua.exe
 Lua result value: 36.0
 f1 Lua function called from kotlin.
 square Lua called from Kotlin, with parameter=6.0
