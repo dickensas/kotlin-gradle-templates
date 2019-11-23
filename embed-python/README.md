@@ -19,12 +19,18 @@ If you have wrapper for windows
 Then execute bellow task to start the OpenGL application
 
      .\gradlew runReleaseExecutableLibgnuplot
+     
+You will get the output like this
 
-FreeGlut+GLEW Based window with FreeType2 based text will be displayed in a windows
+Today is Sat Nov 23 11:47:45 2019
+Will compute 3 times 3
+Result of call: 9
+
 
 **Important Note:**
   * You need to execute code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
   * Verify libpython3.7.dll.a and Python.h in MSYS, install python accordingly
+  * You need to specify the PYTHONPATH and PYTHONHOME with current directory included as "./" 
 
 ## References
 
