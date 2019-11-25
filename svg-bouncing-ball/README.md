@@ -21,6 +21,7 @@ Then execute bellow task to start the OpenGL application
      .\gradlew runReleaseExecutableLibgnuplot
 
 The animation will start with ball touching the border and bouncing around
+[Demo video](http://dickens.co.in/kotlin-svg-animation)
 
 **Important Note:**
   * You need to execute this code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
