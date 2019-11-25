@@ -1,0 +1,6 @@
+headers = chipmunk/chipmunk.h
+package = chipmunk
+headerFilter = chipmunk/*
+libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
+linkerOpts =  -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lchipmunk
+compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lchipmunk
