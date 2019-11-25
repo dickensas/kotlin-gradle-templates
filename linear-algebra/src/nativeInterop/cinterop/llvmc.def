@@ -1,0 +1,5 @@
+headers = llvm-c/Core.h llvm-c/ExecutionEngine.h llvm-c/Target.h llvm-c/Analysis.h llvm-c/BitWriter.h  
+package = llvmc
+libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
+linkerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib  
+compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib 

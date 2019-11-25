@@ -1,0 +1,5 @@
+headers = python3.7m/Python.h python3.7m/object.h
+package = python
+libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
+linkerOpts = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7
+compilerOpts = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7

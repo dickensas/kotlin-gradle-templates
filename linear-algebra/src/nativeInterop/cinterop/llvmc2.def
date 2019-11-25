@@ -1,0 +1,5 @@
+headers = llvm-c/Object.h libelf/libelf.h
+package = llvmc
+libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
+linkerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -Xavr-gcc -lelf --target=avr -mmcu=atmega8 -ffixed-r9 -mno-movt -static --no-undefined -v -Wall
+compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -Xavr-gcc -lelf --target=avr -mmcu=atmega8 -ffixed-r9 -mno-movt -static --no-undefined -v -Wall
