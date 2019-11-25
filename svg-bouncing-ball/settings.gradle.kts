@@ -8,4 +8,4 @@ pluginManagement {
     }
 }
 enableFeaturePreview("GRADLE_METADATA")
-rootProject.name = "gmath"
+rootProject.name = "svg-bouncing-ball"
