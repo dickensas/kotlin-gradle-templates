@@ -1,5 +1,0 @@
-headers = ruby/ruby.h
-package = ruby
-libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
-linkerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lx64-msvcrt-ruby260
-compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lx64-msvcrt-ruby260

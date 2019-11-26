@@ -1,5 +1,0 @@
-headers = pango/pangocairo.h
-package = pango
-libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
-linkerOpts =  -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lpangocairo-1.0 -lpangowin32-1.0 -lpango-1.0 -lcairo -lcairo-gobject -lgobject-2.0
-compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -lpangocairo-1.0 -lpangowin32-1.0 -lpango-1.0 -lcairo -lcairo-gobject -lgobject-2.0
