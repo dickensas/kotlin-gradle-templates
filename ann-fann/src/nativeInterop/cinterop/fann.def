@@ -1,0 +1,6 @@
+headers = fann.h
+package = fann
+
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts = -LC:/msys64/mingw64/lib -lfann
+compilerOpts = -LC:/msys64/mingw64/lib -lfann
