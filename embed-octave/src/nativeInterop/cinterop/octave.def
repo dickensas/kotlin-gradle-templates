@@ -1,0 +1,6 @@
+headers = octave/octave.h octave/mex.h
+package = octave
+headerFilter = octave/*
+libraryPaths = C:/octave/mingw64/lib/octave/5.1.0
+linkerOpts = -LC:/octave/mingw64/lib/octave/5.1.0 -loctave -loctinterp
+compilerOpts = -LC:/octave/mingw64/lib/octave/5.1.0 -loctave -loctinterp
