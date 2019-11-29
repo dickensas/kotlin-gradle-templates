@@ -1,0 +1,6 @@
+headers = CL/cl.h
+package = opencl
+headerFilter = CL/*
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts = -LC:/msys64/mingw64/lib -lopencl
+compilerOpts = -LC:/msys64/mingw64/lib -lopencl
