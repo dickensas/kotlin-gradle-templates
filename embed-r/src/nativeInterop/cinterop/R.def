@@ -1,0 +1,6 @@
+headers = Rinternals.h Rembedded.h
+package = R
+headerFilter = R*
+libraryPaths = C:/ROpen/R353/bin/x64
+linkerOpts = -LC:/ROpen/R353/bin/x64 -lR
+compilerOpts = -LC:/ROpen/R353/bin/x64 -lR

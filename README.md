@@ -19,6 +19,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `embed-python` - Embedding Python 3 or 2 in Kotlin and calling a method with parameter
   * `embed-ruby` - Embedding Ruby in Kotlin
   * `embed-lua` - Embedding Lua in Kotlin and calling a method with parameter
+  * `embed-r` - Embedding R in Kotlin and calling a method with parameter
   * `embed-octave` - Embedding Octave Mex in Kotlin
   * `svg-bouncing-ball` - Simple ball animation with SVG based shape and Kotlin OpenGL
   * `chipmunk-physics` - Simple chipmunk code with 3 rigid surface and ball bouncing from them
