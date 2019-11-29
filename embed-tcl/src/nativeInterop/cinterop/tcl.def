@@ -1,0 +1,6 @@
+headers = itcl.h
+package = tcl
+
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts = -LC:/msys64/mingw64/lib -ltcl
+compilerOpts = -LC:/msys64/mingw64/lib -ltcl
