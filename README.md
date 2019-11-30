@@ -27,3 +27,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `chipmunk-physics` - Simple chipmunk code with 3 rigid surface and ball bouncing from them
   * `linear-algebra` - Linear Algebra using LAPACKE
   * `ann-fann` - Artificial Neural Network using FANN
+  * `gtk3-glade3` - GTK3 and Glade3 builder
