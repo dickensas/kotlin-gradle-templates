@@ -28,3 +28,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `linear-algebra` - Linear Algebra using LAPACKE
   * `ann-fann` - Artificial Neural Network using FANN
   * `gtk3-glade3` - GTK3 and Glade3 builder
+  * `gtk3-glew` - GTK3 and GLEW OpenGL [Experimental]

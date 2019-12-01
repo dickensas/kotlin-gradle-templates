@@ -1,0 +1,6 @@
+headers = gtk/gtk.h gdk/gdkwin32.h
+package = gtk3
+headerFilter = gtk/* gdk/win32/* gobject/* gio/* gdk/* pango/* glib/* glib* gobject* cairo* gsignal* gdkx* win32*
+libraryPaths = C:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib 
+linkerOpts =  -LC:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib -lglib-2.0 -lgdk-3 -lgtk-3 -lgio-2.0 -lgobject-2.0 -lcairo -lopengl32 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32
+compilerOpts = -LC:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib -lglib-2.0 -lgdk-3 -lgtk-3 -lgio-2.0 -lgobject-2.0 -lcairo -lopengl32 -lgtk-win32-2.0 -lgdk-win32-2.0 -lgdi32

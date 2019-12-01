@@ -1,0 +1,6 @@
+headers = GL\\glew.h GL\\wglew.h
+package = glew
+headerFilter = GL/glew.h GL/wglew.h
+libraryPaths = C:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib
+linkerOpts = -LC:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib -lopengl32 -lglew32
+compilerOpts = -LC:\\cygwin64\\usr\\x86_64-w64-mingw32\\sys-root\\mingw\\lib -lopengl32 -lglew32
