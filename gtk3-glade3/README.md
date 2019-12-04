@@ -24,7 +24,7 @@ Then execute bellow task to start the app
 
 make sure the ming64 within cygwin is in path by issuing the below command
 
-export PATH=$PATH:/usr/x86_64-w64-mingw32/sys-root/mingw/bin
+export PATH=/usr/x86_64-w64-mingw32/bin:/usr/x86_64-w64-mingw32/sys-root/mingw/bin:$PATH
 
 make sure the dependencies are installed using setup-x86_64.exe 
 
