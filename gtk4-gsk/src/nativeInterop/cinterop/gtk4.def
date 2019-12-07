@@ -1,0 +1,6 @@
+headers = vulkan/vulkan.h vulkan/vulkan_core.h gtk/gtk.h gdk/win32/gdkwin32.h gsk/gsk.h graphene.h
+package = gtk4
+headerFilter = gtk/* gobject/* gio/* gdk/* gdk/win32/* glib/* vulkan/* gsk/* gsk/vulkan/* glib* gobject* gsignal* win32* gdkwin32* gdk* gsk* graphene* cairo* vulkan*
+libraryPaths = C:\\msys64\\mingw64\\lib 
+linkerOpts = -DVK_USE_PLATFORM_WIN32_KHR -DGDK_RENDERING_VULKAN -LC:\\msys64\\mingw64\\lib -latk-1.0 -lgdk_pixbuf-2.0 -lglib-2.0 -lgtk-4 -lgio-2.0 -lgobject-2.0 -lvulkan -lgraphene-1.0 -lcairo
+compilerOpts = -DVK_USE_PLATFORM_WIN32_KHR -DGDK_RENDERING_VULKAN -LC:\\msys64\\mingw64\\lib -latk-1.0 -lgdk_pixbuf-2.0 -lglib-2.0 -lgtk-4 -lgio-2.0 -lgobject-2.0 -lvulkan -lgraphene-1.0 -lcairo
