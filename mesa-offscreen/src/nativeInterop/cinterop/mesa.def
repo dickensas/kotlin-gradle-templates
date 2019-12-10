@@ -1,0 +1,5 @@
+headers = GL\\osmesa.h
+package = mesa
+libraryPaths = C:\\msys64\\mingw64\\lib
+linkerOpts = -LC:\\msys64\\mingw64\\lib -losmesa
+compilerOpts = -LC:\\msys64\\mingw64\\lib
