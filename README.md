@@ -27,6 +27,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `svg-bouncing-ball` - Simple ball animation with SVG based shape and Kotlin OpenGL
   * `chipmunk-physics` - Simple chipmunk code with 3 rigid surface and ball bouncing from them
   * `linear-algebra` - Linear Algebra using LAPACKE
+  * `gsl-matrix` - GSL Matrix manipulation using GSL
   * `ann-fann` - Artificial Neural Network using FANN
   * `gtk3-glade3` - GTK3 and Glade3 builder
   * `gtk3-glew` - GTK3 and GLEW OpenGL [Experimental]
