@@ -24,4 +24,4 @@ Then execute bellow task to start spring boot
 
 Then launch index.html as http://localhost:8080/index.html
  
-The connection status will be displayed using sockjs and stomp wensocket JS clients
+The connection status will be displayed using sockjs and stomp web socket JS clients
