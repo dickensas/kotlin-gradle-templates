@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello WebSocket</title>
+      <script src="/webjars/jquery/jquery.min.js"></script>
+      <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+      <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+   </head>
+   <body>
+        <h3>Event Log:</h3>
+        <div id="logarea"></div>
+        <script>
+        $(document).ready(function(){
+            $("#logarea").html("jQuery document ready!!<br/>")
+            var socket = new SockJS('/websocket');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+               $("#logarea").html($("#logarea").html() + '<br/>' + 'Websocket Connected: ' + frame)
+               stompClient.subscribe('/topic/greetings', function (greeting) {
+                   $("#logarea").html($("#logarea").html() + '<br/>' + JSON.parse(greeting.body).content);
+               });
+            });
+        })
+        </script>
+   </body>
+</html>
