@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kotlin - Spring Boot + Web Assembly + Embedded Lua</title>
+<script>
+function wasmReady(e) {
+	console.log("wasmReady event triggered")
+}
+addEventListener("wasmReady", wasmReady, false);
+</script>
+<script src="build/bin/wasm/debugExecutable/sboot_wasm_string.wasm.js" wasm="build/bin/wasm/debugExecutable/sboot_wasm_string.wasm"> </script></head>
+<body>
+
+<input type="text" id="t1"/>
+<input type="text" id="t2"/>
+<button id="clickme">Click Me!</button>
+<br/>
+<div id="mydiv"></div> 
+</body>
+</html>
