@@ -23,7 +23,7 @@ kotlin {
         }
     }
     
-    linuxX64("libgnuplot") {
+    linuxX64("libgnuplot1") {
         binaries {
             executable {
                 entryPoint = "plot.main"
