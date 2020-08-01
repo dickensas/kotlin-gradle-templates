@@ -5,5 +5,5 @@ linkerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw6
 compilerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7
 
 libraryPaths.linux = /lib /usr/lib
-linkerOpts.linux = -L/lib -L/usr/lib -Wincompatible-pointer-types-discards-qualifiers -llibpython3.7 -w
-compilerOpts.linux = -L/lib -L/usr/lib -Wincompatible-pointer-types-discards-qualifiers -llibpython3.7 -w
+linkerOpts.linux = -L/lib -L/usr/lib -Wincompatible-pointer-types-discards-qualifiers -llibpython3.7 -w -U__USE_LARGEFILE64 -U__REDIRECT_NTH
+compilerOpts.linux = -L/lib -L/usr/lib -Wincompatible-pointer-types-discards-qualifiers -llibpython3.7 -w -U__USE_LARGEFILE64 -U__REDIRECT_NTH
