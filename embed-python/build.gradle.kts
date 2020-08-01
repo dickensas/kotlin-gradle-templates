@@ -32,7 +32,7 @@ kotlin {
         compilations["main"].cinterops {
             val python by creating {
                 includeDirs {
-                    allHeaders("/usr/include", "/usr/include/python3.8")
+                    allHeaders("/usr/include", "/usr/include/python3.7m")
                 }
             }
         }

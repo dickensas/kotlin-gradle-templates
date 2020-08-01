@@ -1,9 +1,9 @@
-headers = python3.8/Python.h python3.8/object.h
+headers = python3.7m/Python.h python3.7m/object.h
 package = python
 libraryPaths.mingw = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
-linkerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.8
-compilerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.8
+linkerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7
+compilerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7
 
 libraryPaths.linux = /lib /usr/lib
-linkerOpts.linux = -DPY_SSIZE_T_CLEAN -L/lib -LC:/usr/lib -llibpython3.8
-compilerOpts.linux = -DPY_SSIZE_T_CLEAN -LC:/lib -LC:/usr/lib -llibpython3.8
+linkerOpts.linux = -DPY_SSIZE_T_CLEAN -L/lib -LC:/usr/lib -llibpython3.7
+compilerOpts.linux = -DPY_SSIZE_T_CLEAN -LC:/lib -LC:/usr/lib -llibpython3.7
