@@ -37,6 +37,7 @@ You will get the below output
        cd ~
        export PATH=$PATH:/opt/gradle-6.5.1/bin
 ## checkout the source code
+       cd ~
        git clone https://github.com/dickensas/kotlin-gradle-templates.git
        cd kotlin-gradle-templates/embed-python
        
