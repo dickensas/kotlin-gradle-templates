@@ -5,5 +5,5 @@ linkerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw6
 compilerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -llibpython3.7
 
 libraryPaths.linux = /lib /usr/lib
-linkerOpts.linux = -DPY_SSIZE_T_CLEAN -L/lib -LC:/usr/lib -llibpython3.7
-compilerOpts.linux = -DPY_SSIZE_T_CLEAN -LC:/lib -LC:/usr/lib -llibpython3.7
+linkerOpts.linux = -DPY_SSIZE_T_CLEAN -L/lib -L/usr/lib -llibpython3.7
+compilerOpts.linux = -DPY_SSIZE_T_CLEAN -L/lib -L/usr/lib -llibpython3.7
