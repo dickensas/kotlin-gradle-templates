@@ -48,7 +48,7 @@ You will get the below output
        gradle assemble
 ## run
        gradle runReleaseExecutableLibgnuplot
-## See output
+You will get the below output
        
        > Task :runReleaseExecutableLibgnuplot
        Result of call: 9
