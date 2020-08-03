@@ -3,10 +3,10 @@ Below guide explains hows to setup everything from scratch to make this project 
 
 ## Assumptions
 if you are in root mode and see # prompt then you can use
-apt install
+`apt install`
 
 if you are in user mode and see $ promp then you can use
-sudo apt install
+`sudo apt install`
 
 ## Update apt
      apt update
