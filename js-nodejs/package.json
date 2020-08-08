@@ -1,0 +1,16 @@
+{
+ "private": true,
+ "workspaces": [
+  "build\\js"
+ ],
+ "devDependencies": {},
+ "dependencies": {},
+ "peerDependencies": {},
+ "optionalDependencies": {},
+ "bundledDependencies": [],
+ "name": "js-nodejs",
+ "version": "1.0.0",
+ "scripts": {
+  "start": "node build\\js\\packages\\js-nodejs\\kotlin\\js-nodejs.js"
+ }
+}
