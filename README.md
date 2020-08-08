@@ -7,6 +7,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `junit5` - Kotlin JUnit 5 example
   * `js-plain` - Kotlin JavaScript boilerplate
   * `js-commonjs` - Kotlin JavaScript boilerplate with CommonJS enabled
+  * `js-nodejs` - Kotlin multiplatform with NodeJS
   * `sboot-wasm` - Kotlin Web Assembly Hello World! with Spring Boot as server
   * `sboot-wsock` - Kotlin Web Socket with Spring Boot as server using JS libraries JQuery, SockJS and Stomp 
   * `sboot-jython` - Kotlin Web Socket with Spring Boot as server using embedded standalone Jython
