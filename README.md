@@ -9,10 +9,10 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `js-commonjs` - Kotlin JavaScript boilerplate with CommonJS enabled
   * `js-nodejs` - Kotlin multiplatform with NodeJS
   * `sboot-wasm` - Kotlin Web Assembly Hello World! with Spring Boot as server
-  * `sboot-dom` - Kotlin Web Assembly HTML DOM Access
-  * `sboot-heap` - Kotlin Web Assembly Heap Space memory direct access
-  * `sboot-string` - Kotlin Web Assembly String transfer from Web Assembly VM
-  * `sboot-string` - Kotlin Web Assembly Experimental Open GL wrapper using WebGL
+  * `sboot-wasm-dom` - Kotlin Web Assembly HTML DOM Access
+  * `sboot-wasm-heap` - Kotlin Web Assembly Heap Space memory direct access
+  * `sboot-wasm-string` - Kotlin Web Assembly String transfer from Web Assembly VM
+  * `sboot-wasm-webgl` - Kotlin Web Assembly Experimental Open GL wrapper using WebGL
   * `sboot-wsock` - Kotlin Web Socket with Spring Boot as server using JS libraries JQuery, SockJS and Stomp 
   * `sboot-jython` - Kotlin Web Socket with Spring Boot as server using embedded standalone Jython
   * `coroutines-html` - KotlinX HTML with KotlinX coroutines delay
