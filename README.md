@@ -37,3 +37,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `gtk3-glew` - GTK3 and GLEW OpenGL [Experimental]
   * `gtk4-gsk` - GTK4 and GSK Cairo (or) Vulkan(Linux) [Experimental]
   * `arduino-atmega8` - Arduino AVR Atmega8 [Experimental]
+  * `swig-jni` - Automatic Java and C++ Stub using SWIG
