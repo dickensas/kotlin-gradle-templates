@@ -1,5 +1,5 @@
-# kotlin-gradle-templates / kotlin-javafx
-Quick start kotlin Open JavaFX 14
+# kotlin-gradle-templates / minecraft-javafx
+Quick start kotlin Open JavaFX 14 Minecraft like button grid
 
 ## Usage
 The code is ready to execute, no need to download and install JavaFX
