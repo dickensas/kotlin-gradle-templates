@@ -1,6 +1,6 @@
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.3.70-dev-1231-17"
+    id("org.jetbrains.kotlin.multiplatform") version "1.3.72"
 }
 
 repositories {

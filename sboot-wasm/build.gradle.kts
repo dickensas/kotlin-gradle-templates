@@ -2,10 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 
 plugins {
-    kotlin("multiplatform") version "1.3.70-dev-1231-17"
+    kotlin("multiplatform") version "1.3.72"
     id("org.springframework.boot") version "2.2.0.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
-    kotlin("plugin.spring") version "1.3.70-dev-1231-17"
+    kotlin("plugin.spring") version "1.3.72"
 }
 
 repositories {
