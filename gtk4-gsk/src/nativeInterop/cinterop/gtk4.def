@@ -4,3 +4,7 @@ headerFilter = gtk/* gobject/* gio/* gdk/* gdk/win32/* glib/* vulkan/* gsk/* gsk
 libraryPaths = C:\\msys64\\mingw64\\lib 
 linkerOpts = -DVK_USE_PLATFORM_WIN32_KHR -DGDK_RENDERING_VULKAN -LC:\\msys64\\mingw64\\lib -latk-1.0 -lgdk_pixbuf-2.0 -lglib-2.0 -lgtk-4 -lgio-2.0 -lgobject-2.0 -lvulkan -lgraphene-1.0 -lcairo
 compilerOpts = -DVK_USE_PLATFORM_WIN32_KHR -DGDK_RENDERING_VULKAN -LC:\\msys64\\mingw64\\lib -latk-1.0 -lgdk_pixbuf-2.0 -lglib-2.0 -lgtk-4 -lgio-2.0 -lgobject-2.0 -lvulkan -lgraphene-1.0 -lcairo
+---
+void inline run_app(GtkApplication *app, int argc, char **argv) {
+   g_application_run (G_APPLICATION (app), argc, argv);
+}

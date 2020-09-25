@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.3.70-dev-2153"
+    id("org.jetbrains.kotlin.multiplatform") version "1.4.0"
 }
 
 repositories {
+    maven(url = "https://plugins.gradle.org/m2/")
     jcenter()
     maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
 }

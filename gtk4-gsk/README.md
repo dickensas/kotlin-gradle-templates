@@ -22,8 +22,7 @@ Then execute bellow task to start the app
 
      .\gradlew runReleaseExecutableLibgnuplot
 
-Important: please follow the GTK guide to compile 3.96.0 version or 3.94.0 version by referring 
+Important: please follow the GTK guide to compile 3.99.0 version 
 
-https://github.com/GNOME/gtk
-https://developer.gnome.org/gtk4/stable/gtk-building.html
+http://dickens.co.in/gtk4-msys2
 
