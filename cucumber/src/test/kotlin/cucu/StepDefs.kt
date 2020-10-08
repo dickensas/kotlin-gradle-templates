@@ -10,6 +10,7 @@ import junit.framework.Assert.assertEquals
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.WebDriverWait
 
@@ -21,6 +22,8 @@ class StepDefs: En {
 
     init {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\driver\\chromedriver.exe")
+		var options = ChromeOptions()
+		options.setExperimentalOptions("useAutomationExtension",false)
 		driver = ChromeDriver()
 		
 		Given("I am on the Google search page") {

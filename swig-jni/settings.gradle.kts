@@ -1,3 +1,3 @@
 include(":cpplib")
 
-rootProject.name = "jniexample"
+rootProject.name = "swig-jni"
