@@ -17,6 +17,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `sboot-jython` - Kotlin Web Socket with Spring Boot as server using embedded standalone Jython
   * `coroutines-html` - KotlinX HTML with KotlinX coroutines delay
   * `cucumber` - Cucumber browser automation testing
+  * `cucumber-cpp` - Cucumber notepad text copy paste automation
   * `opengl-glsl` - OpenGL GLSL using Kotlin GLFW+GLEW
   * `opengl-glsl-glad` - OpenGL GLSL using Kotlin GLFW+GLAD
   * `vulkan-initialize` - Vulkan Initiate and check for success
