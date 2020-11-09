@@ -30,7 +30,11 @@ Result of call: 9
 **Important Note:**
   * You need to execute code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
   * Verify libpython3.7.dll.a and Python.h in MSYS, install python accordingly
-  * You need to specify the PYTHONPATH and PYTHONHOME with current directory included as "./" 
+  * You need to specify the PYTHONPATH and PYTHONHOME with current directory included as "./" \
+  
+**Setting PYTHONPATH**
+
+      export PYTHONPATH=/mingw64/lib/python38.zip:/mingw64/lib/python3.8:/mingw64/lib/python3.8/lib-dynload:/mingw64/lib/python3.8/dist-packages:./
 
 ## References
 
