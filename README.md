@@ -45,3 +45,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `swig-jni` - Automatic Java and C++ Stub using SWIG
   * `kotlin-javafx` - Kotlin code run Open JavaFX 14 using FXML, without installing Open JavaFX
   * `minecraft-javafx` -  Kotlin code to design like Minecaft Game UI
+  * `win32-directx` - Pure WIN32 API based DirectX 9 code
