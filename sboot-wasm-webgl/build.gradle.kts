@@ -11,10 +11,10 @@ buildscript {
 }
 
 plugins {
-    kotlin("multiplatform") version "1.3.72"
+    kotlin("multiplatform") version "1.5.20"
     id("org.springframework.boot") version "2.2.0.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
-    kotlin("plugin.spring") version "1.3.72"
+    kotlin("plugin.spring") version "1.5.20"
 }
 
 repositories {
@@ -193,7 +193,7 @@ val stubcompiler by tasks.creating(Exec::class) {
 	workingDir = projectDir
 	
 	val ext = if (isWindows) ".bat" else ""
-    val distributionPath = System.getProperty("user.home") as String? + "/.konan/kotlin-native-windows-1.3.72"
+    val distributionPath = System.getProperty("user.home") as String? + "/.konan/kotlin-native-windows-1.5.20"
     
     val kotlincCommand = file(distributionPath).resolve("bin").resolve("kotlinc$ext")
     
@@ -219,7 +219,7 @@ val jsinterop by tasks.creating(Exec::class) {
     workingDir = projectDir
 
     val ext = if (isWindows) ".bat" else ""
-    val distributionPath = System.getProperty("user.home") as String? + "/.konan/kotlin-native-windows-1.3.72"
+    val distributionPath = System.getProperty("user.home") as String? + "/.konan/kotlin-native-windows-1.5.20"
 
     val jsinteropCommand = file(distributionPath).resolve("bin").resolve("jsinterop$ext")
 
