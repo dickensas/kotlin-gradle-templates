@@ -1,0 +1,27 @@
+headers = EXTERN.h perl.h proto.h
+package = perl
+libraryPaths = C:/msys64/mingw64/lib C:/msys64/mingw64/lib/perl5/core_perl/CORE
+linkerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/lib/perl5/core_perl/CORE -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong -lperl532
+ -DPERL_USE_SAFE_PUTENV -U__STRICT_ANSI__ -D_GNU_SOURCE -march=x86-64 -mtune=generic -O2 -pipe -fwrapv -fno-strict-aliasing -fstack-protector-strong
+compilerOpts = -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/lib/perl5/core_perl/CORE -Wl,--enable-auto-import -Wl,--export-all-symbols -Wl,--enable-auto-image-base -fstack-protector-strong -lperl532
+ -DPERL_USE_SAFE_PUTENV -U__STRICT_ANSI__ -D_GNU_SOURCE -march=x86-64 -mtune=generic -O2 -pipe -fwrapv -fno-strict-aliasing -fstack-protector-strong 
+
+---
+
+static PerlInterpreter *my_perl;
+
+static inline _PERL_SYS_INIT3(int argc, char **argv, char **env) {
+	PERL_SYS_INIT3(&argc,&argv,&env);
+}
+
+static inline _PERL_SYS_TERM() {
+	PERL_SYS_TERM();
+}
+
+static inline setFlags() {
+	PL_exit_flags |= PERL_EXIT_DESTRUCT_END;
+}
+
+static inline _get_sv(char *argv) {
+	return SvNV(get_sv(argv, 0));
+}
