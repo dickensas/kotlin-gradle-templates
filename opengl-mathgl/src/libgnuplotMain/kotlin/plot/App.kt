@@ -45,11 +45,12 @@ fun main(args: Array<String>) = memScoped {
     glMatrixMode(GL_MODELVIEW.toUInt())
     glLoadIdentity()
     
-    rnd = mgl_create_data_size(100,1,1);
-    in1 = mgl_create_data_size(100,1,1);
+    rnd = mgl_create_data_size(100,1,0);
+    in1 = mgl_create_data_size(100,1,0);
     gr = mgl_create_graph(WINDOW_WIDTH, WINDOW_HEIGHT);
     mgl_data_modify(rnd,"0.4*rnd+0.1+sin(6*pi*x)",0);
 	mgl_data_modify(in1,"0.3+sin(6*pi*x)",0);
+	mgl_set_range_val(gr, "y"[0].toByte(), -1.5, 1.5);
 	mgl_plot(gr,rnd,". ","");
 	mgl_plot(gr,in1,"b","");
 	mgl_box(gr);

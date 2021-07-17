@@ -7,4 +7,4 @@ pluginManagement {
         maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
     }
 }
-rootProject.name = "opengl-freeglut-freetype2"
+rootProject.name = "opengl-mathgl"
