@@ -30,12 +30,12 @@ You will get the below output
       apt install python3-dev
 ## Install gradle
       cd /opt
-      wget https://services.gradle.org/distributions/gradle-6.5.1-bin.zip
+      wget https://services.gradle.org/distributions/gradle-7.1.1-bin.zip
       unzip gradle-6.5.1-bin.zip
 ## Set PATH for gradle
 
        cd ~
-       export PATH=$PATH:/opt/gradle-6.5.1/bin
+       export PATH=$PATH:/opt/gradle-7.1.1/bin
 ## checkout the source code
        cd ~
        git clone https://github.com/dickensas/kotlin-gradle-templates.git

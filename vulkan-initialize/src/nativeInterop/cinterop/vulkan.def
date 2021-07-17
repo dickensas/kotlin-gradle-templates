@@ -1,5 +1,5 @@
 headers = vulkan/vulkan.h vulkan/vulkan_core.h
 package = vulkan
-libraryPaths = C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
-linkerOpts = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib
-compilerOpts = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib
+libraryPaths =  C:/msys64/mingw64/lib
+linkerOpts = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan -LC:/msys64/mingw64/lib 
+compilerOpts = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan -LC:/msys64/mingw64/lib 

@@ -1,9 +1,9 @@
 package = directx
 headers = windows.h windowsx.h stdint.h d3d9types.h d3d9.h
 headerFilter = windows.h windowsx.h stdint.h d3d9types.h d3d9.h
-libraryPaths = C:/MyFiles/SDKJune2010/Lib/x64 C:/msys64/mingw64/x86_64-w64-mingw32/lib C:/msys64/mingw64/lib
-linkerOpts =  -LC:/MyFiles/SDKJune2010/Lib/x64 -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -ld3d9 -lstdc++ -DUNICODE
-compilerOpts = -LC:/MyFiles/SDKJune2010/Lib/x64 -LC:/msys64/mingw64/lib -LC:/msys64/mingw64/x86_64-w64-mingw32/lib -ld3d9 -lstdc++ -DUNICODE
+libraryPaths = C:/MyFiles/SDKJune2010/Lib/x64  C:/msys64/mingw64/lib
+linkerOpts =  -LC:/MyFiles/SDKJune2010/Lib/x64 -LC:/msys64/mingw64/lib  -ld3d9 -lstdc++ -DUNICODE
+compilerOpts = -LC:/MyFiles/SDKJune2010/Lib/x64 -LC:/msys64/mingw64/lib  -ld3d9 -lstdc++ -DUNICODE
 
 ---
 #pragma comment(lib, "dxgi.lib")
