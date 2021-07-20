@@ -45,6 +45,8 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `gtk4-gsk` - GTK4 and GSK Cairo (or) Vulkan(Linux) [Experimental]
   * `arduino-atmega8` - Arduino AVR Atmega8 [Experimental]
   * `swig-jni` - Automatic Java and C++ Stub using SWIG
+  * `swig-jni-cpointer` - Automatic Java and C pointer Stub using SWIG
+  * `swig-jni-inherit-callback` - Koltin JNI and C++ Inheritance Callback using SWIG
   * `kotlin-javafx` - Kotlin code run Open JavaFX 14 using FXML, without installing Open JavaFX
   * `minecraft-javafx` -  Kotlin code to design like Minecaft Game UI
   * `win32-directx` - Pure WIN32 API based DirectX 9 code
