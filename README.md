@@ -53,3 +53,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `openal-generate` - OpenAL play audio using sine wave with integer array
   * `sndfile-generate` - libsndfile create FLAC audio file using sine wave with integer array
   * `android-multiplatform` - Android Gradle KTS with external library usage
+  * `kotlin-fortran` - Gradle KTS for Combining Kotlin and Fortran
