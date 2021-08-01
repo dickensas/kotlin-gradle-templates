@@ -51,6 +51,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `minecraft-javafx` -  Kotlin code to design like Minecaft Game UI
   * `win32-directx` - Pure WIN32 API based DirectX 9 code
   * `openal-generate` - OpenAL play audio using sine wave with integer array
+  * `openal-mathgl-generate` - Generate a math buffer using MathGL and play using OpenAL
   * `sndfile-generate` - libsndfile create FLAC audio file using sine wave with integer array
   * `android-multiplatform` - Android Gradle KTS with external library usage
   * `kotlin-fortran` - Gradle KTS for Combining Kotlin and Fortran

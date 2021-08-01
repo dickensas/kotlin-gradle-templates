@@ -1,0 +1,9 @@
+package = openal
+headers = AL/al.h AL/alc.h math.h
+headerFilter = AL/al.h AL/alc.h math.h
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts =  -LC:/msys64/mingw64/lib -lopenal -lstdc++ -DUNICODE
+compilerOpts = -LC:/msys64/mingw64/lib -lopenal -lstdc++ -DUNICODE
+
+---
+

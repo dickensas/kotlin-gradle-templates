@@ -1,5 +1,5 @@
-# kotlin-gradle-templates / opengl-mathgl
-Quick start kotlin multiplatform OpenGL GLEW+FreeGlut+FreeType2 Basic Hello World! text drawing using GLSL
+# kotlin-gradle-templates / openal-mathgl-generate
+Generate a math buffer using MathGL and play using OpenAL
 
 ## Usage
 The code is ready to execute
@@ -20,12 +20,10 @@ Then execute bellow task to start the OpenGL application
 
      .\gradlew runReleaseExecutableLibgnuplot
 
-GLFW Based window with MathGL based graph will be displayed in a windows
+A beep sound will play
 
 **Important Note:**
-  * You need to execute this code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
-  * You need to install mingw-w64-x86_64-mathgl
-
+  * Verify libopenal.a, libopenal.dll.a available in the lib folder, install libraries accordingly by installing mingw-w64-x86_64-openal and mingw-w64-x86_64-mathgl
 
 ## References
 

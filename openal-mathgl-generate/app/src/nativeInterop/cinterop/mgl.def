@@ -1,0 +1,5 @@
+headers = mgl2/mgl_cf.h mgl2/glut.h
+package = mgl
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts =  -LC:/msys64/mingw64/lib -lmgl2 -lstdc++
+compilerOpts = -LC:/msys64/mingw64/lib -lmgl2 -lstdc++
