@@ -55,3 +55,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `sndfile-generate` - libsndfile create FLAC audio file using sine wave with integer array
   * `android-multiplatform` - Android Gradle KTS with external library usage
   * `kotlin-fortran` - Gradle KTS for Combining Kotlin and Fortran
+  * `kotlin-midi` - Kotlin code for reading Midi port
