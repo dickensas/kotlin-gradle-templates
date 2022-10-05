@@ -1,0 +1,6 @@
+headers = windows.h winuser.h
+package = win32api
+
+libraryPaths = C:/msys64/mingw64/lib C:/msys64/usr/lib C:/msys64/usr/lib/w32api
+linkerOpts = -IC:/msys64/usr/include/w32api -LC:/msys64/mingw64/lib -LC:/msys64/usr/lib -LC:/msys64/usr/lib/w32api -lgdi32 -luser32
+compilerOpts = -IC:/msys64/usr/include/w32api -LC:/msys64/mingw64/lib -LC:/msys64/usr/lib -LC:/msys64/usr/lib/w32api -lgdi32 -luser32

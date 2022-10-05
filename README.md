@@ -50,6 +50,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `kotlin-javafx` - Kotlin code run Open JavaFX 14 using FXML, without installing Open JavaFX
   * `minecraft-javafx` -  Kotlin code to design like Minecaft Game UI
   * `win32-directx` - Pure WIN32 API based DirectX 9 code
+  * `win32-notepad-menu` - Pure WIN32 API based Notepad Window detection code
   * `openal-generate` - OpenAL play audio using sine wave with integer array
   * `openal-mathgl-generate` - Generate a math buffer using MathGL and play using OpenAL
   * `sndfile-generate` - libsndfile create FLAC audio file using sine wave with integer array
