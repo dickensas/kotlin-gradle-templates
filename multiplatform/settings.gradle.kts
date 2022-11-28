@@ -1,10 +1,8 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        jcenter()
-        mavenLocal()
-        gradlePluginPortal()
-        maven{setUrl("https://dl.bintray.com/kotlin/kotlin-dev" )}
+    	mavenLocal()
+        google()
     }
 }
 rootProject.name = "multiplatform"

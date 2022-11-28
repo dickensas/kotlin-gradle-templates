@@ -1,11 +1,8 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        jcenter()
-        mavenLocal()
-        gradlePluginPortal()
-        maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
+    	mavenLocal()
+        google()
     }
 }
-enableFeaturePreview("GRADLE_METADATA")
 rootProject.name = "ann-fann"

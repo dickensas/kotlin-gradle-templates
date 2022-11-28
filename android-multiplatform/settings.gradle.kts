@@ -1,10 +1,8 @@
 pluginManagement {
     repositories {
-        maven(url = "https://plugins.gradle.org/m2/")
+    	mavenCentral()
+    	mavenLocal()
         google()
-        jcenter()
-        gradlePluginPortal()
-        mavenLocal()
     }
 }
 include(":app")

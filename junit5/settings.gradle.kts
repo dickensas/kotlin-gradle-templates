@@ -1,9 +1,8 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        jcenter()
-        mavenLocal()
-        gradlePluginPortal()
+    	mavenLocal()
+        google()
     }
 }
 rootProject.name = "junit5"

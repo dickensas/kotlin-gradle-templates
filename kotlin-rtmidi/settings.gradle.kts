@@ -1,7 +1,8 @@
 pluginManagement {
     repositories {
         mavenCentral()
-        gradlePluginPortal()
+    	mavenLocal()
+        google()
     }
 }
 rootProject.name = "kotlin-rtmidi"
