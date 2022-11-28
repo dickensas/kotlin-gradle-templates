@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.5.20"
+    id("org.jetbrains.kotlin.multiplatform") version "1.7.21"
 }
 
 repositories {
-    maven(url = "https://plugins.gradle.org/m2/")
-    jcenter()
-    maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 kotlin {

@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.5.20-RC"
+    id("org.jetbrains.kotlin.multiplatform") version "1.7.21-RC"
 }
 
 val konanPath = System.getenv("KONAN_DATA_DIR")?.let { File(it) }

@@ -2,15 +2,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 
 plugins {
-    kotlin("multiplatform") version "1.5.20"
+    kotlin("multiplatform") version "1.7.21"
     id("org.springframework.boot") version "2.2.0.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
-    kotlin("plugin.spring") version "1.5.20"
+    kotlin("plugin.spring") version "1.7.21"
 }
 
 repositories {
-    jcenter()
-    maven{setUrl("https://dl.bintray.com/kotlin/kotlin-dev" )}
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 kotlin {

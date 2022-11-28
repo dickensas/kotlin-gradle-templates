@@ -5,7 +5,8 @@ plugins {
 
 repositories {
     mavenCentral()
-    jcenter()
+	mavenLocal()
+    google()
 }
 
 dependencies {

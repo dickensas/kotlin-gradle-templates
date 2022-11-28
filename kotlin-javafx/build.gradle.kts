@@ -1,12 +1,13 @@
 plugins {
     java
-    id("org.jetbrains.kotlin.jvm") version "1.5.20"
+    id("org.jetbrains.kotlin.jvm") version "1.7.21"
     application
 }
 
 repositories {
     mavenCentral()
-    jcenter()
+	mavenLocal()
+    google()
 }
 
 var currentOS = org.gradle.internal.os.OperatingSystem.current()

@@ -3,8 +3,9 @@ plugins {
 }
 
 repositories {
-    jcenter()
-    maven { setUrl("https://dl.bintray.com/kotlin/kotlin-dev") }
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 dependencies {

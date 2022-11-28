@@ -1,12 +1,13 @@
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.5.20"
+    id("org.jetbrains.kotlin.multiplatform") version "1.7.21"
 }
 
 version = "1.0.0"
 
 repositories {
-    jcenter()
-    maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 kotlin {

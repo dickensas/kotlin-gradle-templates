@@ -1,10 +1,11 @@
 plugins {
-    kotlin("js").version(""1.5.20"")
+    kotlin("js").version(""1.7.21"")
 }
 
 repositories {
-    jcenter()
-	maven{setUrl("https://dl.bintray.com/kotlin/kotlin-dev" )}
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 dependencies {

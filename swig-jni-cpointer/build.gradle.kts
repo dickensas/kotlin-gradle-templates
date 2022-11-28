@@ -1,12 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.20"
+    id("org.jetbrains.kotlin.jvm") version "1.7.21"
     application
 }
 
 repositories {
-    jcenter()
-    maven(url = "https://dl.bintray.com/kotlin/kotlin-dev" )
+    mavenCentral()
+	mavenLocal()
+    google()
 }
 
 dependencies {
