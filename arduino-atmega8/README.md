@@ -22,8 +22,14 @@ Then execute bellow task to build the library
 
      .\gradlew assemble
 
-make sure you are within ming64 terminal
+make sure you are within mingw64 terminal
 
-export PATH=$PATH:/c/arduino/hardware/tools/avr/bin:/c/arduino/hardware/tools/avr/avr/bin
+Install AVR related tools and libraries as below
+       
+     pacman -S mingw-w64-x86_64-avr-gcc
+     pacman -S mingw-w64-x86_64-avr-libc
 
+If your msys is installed at c:\msys64 then libatmega8.a libraries will be found at the below folder
+
+     C:\msys64\mingw64\avr\lib\avr4
 

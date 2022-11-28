@@ -21,6 +21,8 @@ kotlin {
             val avr by creating {
                 includeDirs {
                     allHeaders(
+                    "C:/msys64/mingw64/include",
+                    "C:/msys64/mingw64/avr/include",
                     "C:\\arduino\\hardware\\tools\\avr\\avr\\include",
                     "C:\\arduino\\hardware\\tools\\avr\\i686-w64-mingw32\\avr\\include",
                     "C:\\arduino\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include"
