@@ -1,6 +1,6 @@
 headers = alloca.h assert.h ctype.h fcntl.h inttypes.h locale.h math.h setjmp.h signal.h stdfix-avrlibc.h stdint.h time.h unistd.h avr/io.h avr/common.h avr/boot.h avr/eeprom.h avr/fuse.h avr/interrupt.h avr/cpufunc.h avr/lock.h avr/parity.h avr/pgmspace.h avr/portpins.h avr/power.h avr/sfr_defs.h avr/signal.h avr/signature.h avr/sleep.h avr/version.h
 package = platform.avr
 staticLibraries = libc.a libatmega8.a libm.a
-libraryPaths = C:/msys64/mingw64/avr/lib C:/msys64/mingw64/avr/lib/avr4
-linkerOpts = -LC:/msys64/mingw64/avr/lib -LC:/msys64/mingw64/avr/lib/avr4 -target avr-unknown-none --target=avr -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -Xavr-gcc -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
-compilerOpts = -LC:/msys64/mingw64/avr/lib -LC:/msys64/mingw64/avr/lib/avr4 -target avr-unknown-none --target=avr -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -Xavr-gcc -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
+libraryPaths = C:/msys64/mingw64/avr/lib/avr4 C:/msys64/mingw64/avr/lib
+linkerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
+compilerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
