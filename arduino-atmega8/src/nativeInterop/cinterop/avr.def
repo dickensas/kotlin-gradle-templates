@@ -2,5 +2,5 @@ headers = alloca.h assert.h ctype.h fcntl.h inttypes.h locale.h math.h setjmp.h 
 package = platform.avr
 staticLibraries = libc.a libatmega8.a libm.a
 libraryPaths = C:/msys64/mingw64/avr/lib/avr4 C:/msys64/mingw64/avr/lib
-linkerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -c -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
-compilerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -c -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
+linkerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
+compilerOpts = -LC:/msys64/mingw64/avr/lib/avr4 -LC:/msys64/mingw64/avr/lib -v -Wall -target arm-none-eabi -Xlinker=C:/msys64/mingw64/avr/bin/ld.exe -Xclang=avr-gcc --target=arm-none-eabi -ffreestanding -std=c99 -nostdinc -fno-integrated-as -w -v -D__AVR_ATmega8__ -ffixed-r9 -mno-movt -static --no-undefined -Os -Wall -latmega8 -lc -lm
