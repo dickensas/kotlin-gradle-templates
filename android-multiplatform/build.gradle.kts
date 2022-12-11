@@ -17,6 +17,7 @@ buildscript {
 }
 
 val localRepo = rootProject.file("build/.m2-local")
+val userHome = File(System.getenv("USERPROFILE") ?: "")
 
 allprojects {
     repositories {
