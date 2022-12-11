@@ -18,7 +18,7 @@ kotlin {
         compilations["main"].cinterops {
             val python by creating {
                 includeDirs {
-                    allHeaders("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python3.8")
+                    allHeaders("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python3.10")
                 }
             }
         }
@@ -33,7 +33,7 @@ kotlin {
         compilations["main"].cinterops {
             val python by creating {
                 includeDirs {
-                    allHeaders("/usr/include", "/usr/include/python3.8")
+                    allHeaders("/usr/include", "/usr/include/python3.10")
                 }
             }
         }
