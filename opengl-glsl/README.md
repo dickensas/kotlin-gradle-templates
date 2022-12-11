@@ -25,3 +25,7 @@ GLFW Based window with GLEW based Triangle will be displayed
 
 ## Reference
 [1 - Triangle by Dominaezzz](https://github.com/Dominaezzz/kgl-opengl-samples)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

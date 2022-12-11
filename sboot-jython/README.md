@@ -27,3 +27,7 @@ Then launch index.html as http://localhost:8080/index.html
 The AJAX request parameter "name" will be received by jython code and converted to 
 Hello! &lt;name&gt;, from jython
 it will print on the html output
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

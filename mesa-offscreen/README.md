@@ -76,3 +76,7 @@ Output will be plain text of the byte array
 
 
 make sure the ming64 is installed and install the mesa dependencies
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

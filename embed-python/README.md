@@ -39,3 +39,7 @@ Result of call: 9
 ## References
 
  **Web** [Python Official Document](https://docs.python.org/3/extending/embedding.html#pure-embedding)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

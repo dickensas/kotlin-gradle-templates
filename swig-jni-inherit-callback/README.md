@@ -34,3 +34,7 @@ Means C++ calls back your Kotlin JVM function
 **Web** [Official SWIG](http://www.swig.org/Doc1.3/Java.html#compilation_problems_cpp)<br/>
 **Web** [Official Gradle CPP](https://docs.gradle.org/current/userguide/building_cpp_projects.html#sec:custom_cpp_compile_link)<br/>
 **GitHub** [Offical SWIG Callback Example](https://github.com/swig/swig/tree/master/Examples/java/callback)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

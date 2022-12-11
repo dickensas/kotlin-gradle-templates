@@ -23,3 +23,6 @@ Then execute bellow task to start the app
 
 The app will try to initiate Vulkan and print success in console or error accordingly
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

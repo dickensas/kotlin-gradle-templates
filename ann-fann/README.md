@@ -29,3 +29,6 @@ The application will print ANN routing
   * Install FANN via pacman using below command
     * pacman -S mingw-w64-x86_64-fann
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

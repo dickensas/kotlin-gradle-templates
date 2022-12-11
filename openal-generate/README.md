@@ -25,4 +25,6 @@ A beep sound will play
 **Important Note:**
   * Verify libopenal.a, libopenal.dll.a available in the lib folder, install libraries accordingly by installing mingw-w64-x86_64-openal
 
-
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

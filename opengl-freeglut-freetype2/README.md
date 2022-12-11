@@ -32,3 +32,8 @@ and put it inside the exe folder
 ## References
 
  **GitLab** [Wiki Books OpenGL](https://gitlab.com/wikibooks-opengl/modern-tutorials/tree/master/text01_intro)
+
+ **Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64
+ 

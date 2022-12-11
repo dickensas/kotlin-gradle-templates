@@ -27,3 +27,7 @@ Then execute bellow task to start the OpenGL application
 ## References
 
  **Web** [Ruby Official Document](https://docs.ruby-lang.org/en/2.4.0/extension_rdoc.html#label-Invoke+Ruby+Method+from+C)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

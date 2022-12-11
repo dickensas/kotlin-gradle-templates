@@ -30,3 +30,7 @@ You will see the below output
 ## References
 
 **Gradle** [Forum](https://discuss.gradle.org/t/native-support-for-fortran-and-c-c-mixed/21414)<br/>
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

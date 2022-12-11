@@ -31,3 +31,6 @@ GLFW Based window with GLEW and libpangocairo based Text rendering
  **GitHub** [GNOME pango](https://github.com/GNOME/pango/blob/mainline/examples/cairosimple.c)
  **Khronos** [Common Mistakes](https://www.khronos.org/opengl/wiki/Common_Mistakes#Creating_a_complete_texture)
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

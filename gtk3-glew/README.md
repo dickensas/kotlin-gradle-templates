@@ -37,3 +37,6 @@ xorg-server         1.20.4-1
 xinit               1.4.1-1
 
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

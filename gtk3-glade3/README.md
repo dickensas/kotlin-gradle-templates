@@ -37,3 +37,6 @@ xinit               1.4.1-1
 
 you can edit the file "window_main.glade" by yourself using the glade tool
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

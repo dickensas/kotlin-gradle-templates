@@ -30,3 +30,6 @@ GLFW Based window with GLEW, libcairo and librsvg based SVG Rendering
 
 **GitHub** [GNOME librsvg](https://github.com/GNOME/librsvg/blob/2.46.3/tests/api.c)
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

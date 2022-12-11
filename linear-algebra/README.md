@@ -27,3 +27,7 @@ Then execute bellow task to start the OpenGL application
 ## References
 
 **Web** [Official LAPACK](http://www.netlib.org/lapack/explore-html/d3/d77/example___d_g_e_l_s__colmajor_8c_source.html)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

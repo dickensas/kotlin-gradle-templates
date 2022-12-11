@@ -28,3 +28,7 @@ A beep sound will play
 ## References
 
  **manpages** [manpages](http://www.manpagez.com/info/mathgl/mathgl-1.8/mathgl_441.php)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

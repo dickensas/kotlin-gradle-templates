@@ -41,3 +41,6 @@ The app will open a windows and display a triangle
 
 **GitLab**: [Horribile](https://gitlab.com/Horribile/kvarc)
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

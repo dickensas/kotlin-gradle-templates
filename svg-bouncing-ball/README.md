@@ -26,3 +26,6 @@ The animation will start with ball touching the border and bouncing around
 **Important Note:**
   * You need to execute this code executable from the MSYS2 or cygwin terminal, otherwise many dll files need to be copied to this exe folder
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

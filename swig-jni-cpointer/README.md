@@ -71,3 +71,7 @@ You will see the below output
 
 **Web** [Official SWIG](http://www.swig.org/Doc1.3/Java.html#compilation_problems_cpp)<br/>
 **Web** [Official Gradle CPP](https://docs.gradle.org/current/userguide/building_cpp_projects.html#sec:custom_cpp_compile_link)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

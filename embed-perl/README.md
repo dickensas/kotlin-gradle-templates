@@ -34,3 +34,6 @@ You will get the below output
 
  **Perl Doc** [Evaluating a Perl statement from your C program](https://perldoc.perl.org/perlembed#Evaluating-a-Perl-statement-from-your-C-program)
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

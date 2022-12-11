@@ -26,3 +26,6 @@ Important: please follow the GTK guide to compile 3.99.0 version
 
 http://dickens.co.in/gtk4-msys2
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

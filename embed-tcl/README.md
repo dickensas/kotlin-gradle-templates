@@ -30,3 +30,6 @@ You can change the TCL and also you can write TCL direclty in double quotes to t
   * you need install tcl via MSYS2 using the command
     * pacman -S mingw-w64-x86_64-tcl mingw-w64-x86_64-tk
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

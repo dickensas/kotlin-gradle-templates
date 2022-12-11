@@ -31,3 +31,6 @@ You will get output like this, 21 is the first key of a generic midi keyboard
 **Important Note:**
   * You need to install rtmidi library via MSYS2
 
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64

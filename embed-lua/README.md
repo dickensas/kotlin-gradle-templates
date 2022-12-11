@@ -34,3 +34,7 @@ square Lua called from Kotlin, with parameter=6.0
 ## References
 
  **Web** [Lua Official Document](https://www.lua.org/pil/24.html)
+
+**Important Note:**
+  * You need to execute this code executable from the MSYS2 terminal, otherwise in won't work
+  * MSYS2 needs to be installed as c:\msys64
