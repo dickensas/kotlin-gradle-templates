@@ -15,7 +15,7 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `sboot-wasm-webgl` - Kotlin Web Assembly Experimental Open GL wrapper using WebGL
   * `sboot-wsock` - Kotlin Web Socket with Spring Boot as server using JS libraries JQuery, SockJS and Stomp 
   * `sboot-jython` - Kotlin Web Socket with Spring Boot as server using embedded standalone Jython
-  * `sboot-junit-trans` - Kotlin JUnit 5 with platform transaction
+  * `sboot-junit-trans` - Kotlin JUnit 5 with platform transaction manager
   * `coroutines-html` - KotlinX HTML with KotlinX coroutines delay
   * `cucumber` - Cucumber browser automation testing
   * `cucumber-cpp` - Cucumber notepad text copy paste automation
