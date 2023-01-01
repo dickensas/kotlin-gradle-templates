@@ -16,6 +16,10 @@ gradle-app.setting
 /.pydevproject
 /.settings/
 **/build/*
+**/bin/*
 **/build/.gradle
 **/build/.gradle/*
 **/__pycache__/*
+**/.settings/*
+**/.classpath
+**/.project
