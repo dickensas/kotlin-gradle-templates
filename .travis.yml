@@ -1,0 +1,8 @@
+language: java
+sudo: false
+jdk:
+  - openjdk17
+git:
+  quiet: true
+jobs:
+  fast_finish: true
