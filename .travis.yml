@@ -1,5 +1,10 @@
 language: java
+install: skip
 sudo: false
+
+os: linux
+dist: trusty
+
 jdk:
   - openjdk17
 git:
