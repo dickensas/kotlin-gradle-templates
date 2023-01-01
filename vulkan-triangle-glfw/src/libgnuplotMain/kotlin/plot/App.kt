@@ -29,7 +29,7 @@ fun loadShader(fileName:String, vk_ldevice:VkDevice) = memScoped {
             pNext = null
             codeSize = size.toULong()
             @Suppress("UNCHECKED_CAST")
-            pCode = it.addressOf(0) as CPointer<uint32_tVar>
+            pCode = it.addressOf(0) as CPointer<UIntVarOf<UInt>>
             flags = 0u
         }
         if(vkCreateShaderModule(vk_ldevice, createInfo.ptr, null, shaderModule.ptr)!=VK_SUCCESS) 
@@ -399,8 +399,8 @@ fun main() = memScoped {
                 sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR
                 pNext = null
                 flags = 0u
-                hinstance = GetModuleHandle!!(null)
-                hwnd = glfwGetWin32Window(window)
+                hinstance = GetModuleHandle!!(null) as vulkan.HINSTANCE
+                hwnd = glfwGetWin32Window(window) as vulkan.HWND
             }
             var result = vkCreateWin32SurfaceKHR(vk_instance, createInfo.ptr, null, output.ptr)
             
@@ -1385,7 +1385,7 @@ fun main() = memScoped {
             var res1 =  vkAcquireNextImageKHR(
                 vk_ldevice,
                 vk_swapchain,
-                UINT64_MAX,
+                vulkan.UINT64_MAX,
                 imageAvailableSemaphore.value,
                 null,
                 imageIndex.ptr
