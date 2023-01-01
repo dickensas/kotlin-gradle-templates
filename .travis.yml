@@ -11,3 +11,6 @@ git:
   quiet: true
 jobs:
   fast_finish: true
+
+script:
+  - ./gradlew build --scan -s
