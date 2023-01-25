@@ -18,8 +18,9 @@ script:
 
 #python
   - sudo apt-get -y install libpython3.9 --fix-missing
-  - sudo apt-get -y install python3.9-full
-  - sudo apt-get -y install python3.9-dev
+  - sudo apt-get -y install libpython3.10
+  - sudo apt-get -y install libpython3.10-dev
+  - sudo apt-get -y install libpython3.10-stdlib
 
 #pip
   - sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
