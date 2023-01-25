@@ -6,5 +6,4 @@ pluginManagement {
 }
 rootProject.name = "kotlin-gradle-templates"
 include("sboot-junit-trans")
-include("vulkan-triangle-glfw")
 include("sboot-mockito-integration")
