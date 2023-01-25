@@ -17,8 +17,7 @@ script:
   - sudo apt-get -y install libopenal-dev
 
 #python
-  - sudo apt-get -y install libpython3.9 --fix-missing
-  - sudo apt-get -y install libpython3.10
+  - sudo apt-get -y install libpython3.10 --fix-missing
   - sudo apt-get -y install libpython3.10-dev
   - sudo apt-get -y install libpython3.10-stdlib
 
