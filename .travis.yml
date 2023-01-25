@@ -13,4 +13,4 @@ jobs:
   fast_finish: true
 
 script:
-  - ./gradlew build
+  - chmod +x ./gradlew && ./gradlew build
