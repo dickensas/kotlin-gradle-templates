@@ -1,3 +1,4 @@
+[![Build status](https://app.travis-ci.com/dickensas/kotlin-gradle-templates.svg)](https://app.travis-ci.com/github/dickensas/kotlin-gradle-templates)
 # kotlin-gradle-templates
 Quick start kotlin gradle DSL
 
