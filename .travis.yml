@@ -59,10 +59,11 @@ script:
 #mathgl dependencies
   - sudo apt-get -y install libegl1-mesa libegl1-mesa-dev
   - sudo apt-get -y install libgles2-mesa-dev libglfw3-dev libglfw3
-  - sudo apt-get -y install libglew-dev libglew2.1 freeglut3-dev
+  - sudo apt-get -y install libglew-dev libglew2.2 freeglut3-dev
   - sudo mkdir -p build/mathgl-2.4.4
 
 #mathgl
+  - sudo apt-get -y install cmake
   - sudo wget --no-check-certificate -c "https://nchc.dl.sourceforge.net/project/mathgl/mathgl/mathgl 2.4.4/mathgl-2.4.4.tar.gz" -O - | sudo tar -xz -C build
   - sudo mkdir -p build/mathgl-2.4.4/_build
   - sudo cmake build/mathgl-2.4.4 -B build/mathgl-2.4.4/_build -DCMAKE_INSTALL_PREFIX=/usr -D enable-glut=on
