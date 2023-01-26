@@ -15,8 +15,6 @@ jobs:
 script:
 #openjdk8
   - sudo chmod 777 gradlew
-  - export JAVA_HOME=/usr/local/lib/jvm/openjdk17
-  - export PATH=$JAVA_HOME/bin:$PATH
   - sudo apt-get -y install libncurses5
   - sudo apt-get update
 
