@@ -29,9 +29,9 @@ script:
 #pip
   - wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
   - python3 get-pip.py
-  - python3 -m pip install --upgrade pip
-  - python3 -m pip install --upgrade setuptools 
-  - python3 -m pip install --upgrade wheel
+  - sudo python3 -m pip install --upgrade pip
+  - sudo python3 -m pip install --upgrade setuptools 
+  - sudo python3 -m pip install --upgrade wheel
 
 #build tools
   - sudo python3 -m pip install meson
@@ -63,7 +63,6 @@ script:
   - sudo mkdir -p build/mathgl-2.4.4
 
 #mathgl
-  - sudo apt-get -y install cmake meson ninja-build
   - sudo wget --no-check-certificate -c "https://nchc.dl.sourceforge.net/project/mathgl/mathgl/mathgl 2.4.4/mathgl-2.4.4.tar.gz" -O - | sudo tar -xz -C build
   - sudo mkdir -p build/mathgl-2.4.4/_build
   - sudo cmake build/mathgl-2.4.4 -B build/mathgl-2.4.4/_build -DCMAKE_INSTALL_PREFIX=/usr -D enable-glut=on
