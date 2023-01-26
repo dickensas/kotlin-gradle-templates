@@ -42,5 +42,19 @@ script:
   - sudo mkdir -p build/pango
   - sudo mkdir -p build/vulkan
 
+#midi
+  - sudo apt-get -y install libjack-dev libtool bzip2 m4 automake
+  - sudo apt-get -y install libalsaplayer-dev libasound2-dev
+  - sudo mkdir -p build/rtmidi
+  - sudo git clone https://github.com/thestk/rtmidi.git build/rtmidi
+  - sudo git --work-tree=build/rtmidi --git-dir=build/rtmidi/.git checkout tags/4.0.0 -b 4.0.0
+  - sudo chmod -R 755 build
+  - cd build/rtmidi
+  - sudo ./autogen.sh
+  - sudo ./configure --prefix=/usr
+  - sudo make
+  - sudo make install
+  - cd ../..
+
 #gradle
   - sudo ./gradlew build
