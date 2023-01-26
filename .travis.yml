@@ -16,7 +16,7 @@ script:
 #openjdk8
   - sudo chmod 777 gradlew
   - sudo apt-get -y install libncurses5
-  - sudo apt-get update
+  - sudo apt-get -y update
 
 #openal
   - sudo apt-get -y install libopenal-dev
