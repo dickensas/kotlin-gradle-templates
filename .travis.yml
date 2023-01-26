@@ -28,15 +28,13 @@ script:
 
 #pip
   - sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-  - sudo python3 get-pip.py
-  - sudo python3 -m pip install --upgrade pip
-  - sudo python3 -m pip install --upgrade setuptools 
-  - sudo python3 -m pip install --upgrade wheel
+  - python3 get-pip.py
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install --upgrade setuptools 
+  - python3 -m pip install --upgrade wheel
 
 #build tools
-  - sudo python3 -m pip install meson
-  - sudo python3 -m pip install ninja
-  - sudo python3 -m pip install cmake
+  - sudo apt-get -y install meson cmake ninja-build
   - sudo mkdir -p build/gtk4
   - sudo mkdir -p build/glib2
   - sudo mkdir -p build/pango
@@ -126,7 +124,7 @@ script:
   - sudo git clone https://github.com/GNOME/gtk.git build/gtk4
   - sudo git --work-tree=build/gtk4 --git-dir=build/gtk4/.git checkout tags/4.2.1 -b 4.2.1
   - sudo mkdir -p build/gtk4/_build
-  - sudo meson -Dprefix=/usr -Dvulkan=enabled -Dwayland-backend=false -Dbroadway-backend=false -Dprint-backends=none -Dman-pages=false -Dgtk_doc=false -Ddemos=false -Dmedia=ffmpeg -Dbuild-examples=false -Dbuild-tests=false -Dinstall-tests=false build/gtk4/_build build/gtk4
+  - sudo meson -Dprefix=/usr -Dvulkan=enabled -Dwayland-backend=false -Dbroadway-backend=false -Dman-pages=false -Dgtk_doc=false -Ddemos=false -Dbuild-examples=false -Dbuild-tests=false -Dinstall-tests=false build/gtk4/_build build/gtk4
   - sudo ninja -C build/gtk4/_build -j 1
   - sudo ninja -C build/gtk4/_build install
 
