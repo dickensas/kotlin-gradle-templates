@@ -34,9 +34,9 @@ script:
   - python3 -m pip install --upgrade wheel
 
 #build tools
-  - python3 -m pip install meson
-  - python3 -m pip install ninja
-  - python3 -m pip install cmake
+  - sudo python3 -m pip install meson
+  - sudo python3 -m pip install ninja
+  - sudo python3 -m pip install cmake
   - sudo mkdir -p build/gtk4
   - sudo mkdir -p build/glib2
   - sudo mkdir -p build/pango
