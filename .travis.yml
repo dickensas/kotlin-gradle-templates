@@ -22,16 +22,16 @@ script:
   - sudo apt-get -y install python3.10-dev
 
 #pip
-  - sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-  - sudo python3 get-pip.py
-  - sudo python3 -m pip install --upgrade pip
-  - sudo python3 -m pip install --upgrade setuptools 
-  - sudo python3 -m pip install --upgrade wheel
+  - wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
+  - python3 get-pip.py
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install --upgrade setuptools 
+  - python3 -m pip install --upgrade wheel
 
 #build tools
-  - sudo python3 -m pip install meson
-  - sudo python3 -m pip install ninja
-  - sudo python3 -m pip install cmake
+  - python3 -m pip install meson
+  - python3 -m pip install ninja
+  - python3 -m pip install cmake
   - sudo mkdir -p build/gtk4
   - sudo mkdir -p build/glib2
   - sudo mkdir -p build/pango
