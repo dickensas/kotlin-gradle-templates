@@ -27,8 +27,8 @@ script:
   - sudo apt-get -y install python3.10-dev
 
 #pip
-  - wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-  - python3 get-pip.py
+  - sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
+  - sudo python3 get-pip.py
   - sudo python3 -m pip install --upgrade pip
   - sudo python3 -m pip install --upgrade setuptools 
   - sudo python3 -m pip install --upgrade wheel
