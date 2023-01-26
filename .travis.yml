@@ -3,7 +3,7 @@ install: skip
 sudo: false
 
 os: linux
-dist: jammy
+dist: bionic
 
 jdk:
   - openjdk17
@@ -24,6 +24,8 @@ script:
   - sudo apt-get -y install libopenal-dev
 
 #python
+  - sudo apt-get -y install software-properties-common
+  - sudo add-apt-repository ppa:deadsnakes/ppa
   - sudo apt-get -y install libpython3.10 --fix-missing
   - sudo apt-get -y install python3.10-full
   - sudo apt-get -y install python3.10-dev
