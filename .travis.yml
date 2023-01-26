@@ -32,15 +32,15 @@ script:
 
 #pip
   - wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
-  - python3 get-pip.py
-  - python3 -m pip install --upgrade pip
-  - python3 -m pip install --upgrade setuptools 
-  - python3 -m pip install --upgrade wheel
+  - python3.10 get-pip.py
+  - python3.10 -m pip install --upgrade pip
+  - python3.10 -m pip install --upgrade setuptools 
+  - python3.10 -m pip install --upgrade wheel
 
 #build tools
-  - python3 -m pip install meson
-  - python3 -m pip install ninja
-  - python3 -m pip install cmake
+  - python3.10 -m pip install meson
+  - python3.10 -m pip install ninja
+  - python3.10 -m pip install cmake
   - sudo mkdir -p build/gtk4
   - sudo mkdir -p build/glib2
   - sudo mkdir -p build/pango
