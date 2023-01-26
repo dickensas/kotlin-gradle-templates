@@ -38,4 +38,4 @@ script:
   - sudo mkdir -p build/vulkan
 
 #gradle
-  - chmod +x ./gradlew && ./gradlew assemble
+  - which java
