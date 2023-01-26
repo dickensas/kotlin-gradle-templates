@@ -56,5 +56,79 @@ script:
   - sudo make install
   - cd ../..
 
+#mathgl dependencies
+  - sudo apt-get -y install libegl1-mesa libegl1-mesa-dev
+  - sudo apt-get -y install libgles2-mesa-dev libglfw3-dev libglfw3
+  - sudo apt-get -y install libglew-dev libglew2.1 freeglut3-dev
+  - sudo mkdir -p build/mathgl-2.4.4
+
+#mathgl
+  - sudo wget --no-check-certificate -c "https://nchc.dl.sourceforge.net/project/mathgl/mathgl/mathgl 2.4.4/mathgl-2.4.4.tar.gz" -O - | sudo tar -xz -C build
+  - sudo mkdir -p build/mathgl-2.4.4/_build
+  - sudo cmake build/mathgl-2.4.4 -B build/mathgl-2.4.4/_build -DCMAKE_INSTALL_PREFIX=/usr -D enable-glut=on
+  - sudo cmake --build build/mathgl-2.4.4/_build --target install
+
+#gtk dependencies big install list
+  - sudo apt-get -y install libelf++0 libelf1 libelf-dev
+  - sudo apt-get -y install libxml2 libxml2-dev libxml2-utils 
+  - sudo apt-get -y install libxslt1-dev libxslt1.1
+  - sudo apt-get -y install libxkbcommon-dev libxrandr-dev libxrender-dev
+  - sudo apt-get -y install libxi-dev libxdamage-dev libxfixes-dev
+  - sudo apt-get -y install libxext-dev libxcursor-dev libfontconfig-dev
+  - sudo apt-get -y install libx11-dev libwayland-dev libpng-dev
+  - sudo apt-get -y install libc6-dev libc6 libc6-amd64
+  - sudo apt-get -y install libpng-dev libjpeg-dev
+  - sudo apt-get -y install libspectre-dev libspectre1 libpixman-1-dev
+  - sudo apt-get -y install libxcb-shm0 libxcb-shm0-dev sysprof
+  - sudo apt-get -y install libicu-dev libthai-dev libcolord-dev
+  - sudo apt-get -y install libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev
+  - sudo apt-get -y install ffmpeg libatk1.0-dev libglm-dev iso-codes
+  - sudo apt-get -y install libgraphene-1.0-dev libgraphene-1.0-0 
+  - sudo apt-get -y install sassc hicolor-icon-theme
+  - sudo apt-get -y install pkg-config bison gettext xsltproc
+
+#vulkan headers
+  - sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
+  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+  - sudo mkdir -p build/vulkan/_build
+  - sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+  - sudo cmake --build build/vulkan/_build --target install
+  - sudo rm -fr build/vulkan
+
+#vulkan loader
+  - sudo mkdir -p build/vulkan
+  - sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkan
+  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+  - sudo mkdir -p build/vulkan/_build
+  - sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+  - sudo cmake --build build/vulkan/_build --target install
+
+#rsvg
+  - sudo apt-get -y install librsvg2-dev
+
+#glib2
+  - sudo git clone https://github.com/GNOME/glib.git build/glib2
+  - sudo git --work-tree=build/glib2 --git-dir=build/glib2/.git checkout tags/2.68.3 -b 2.68.3
+  - sudo mkdir -p build/glib2/_build
+  - sudo meson -Dprefix=/usr -Dtests=false build/glib2/_build build/glib2
+  - sudo ninja -C build/glib2/_build -j 1
+  - sudo ninja -C build/glib2/_build install
+
+#pango
+  - sudo git clone https://github.com/GNOME/pango.git build/pango
+  - sudo git --work-tree=build/pango --git-dir=build/pango/.git checkout tags/1.48.7 -b 1.48.7
+  - sudo mkdir -p build/pango/_build
+  - sudo meson -Dprefix=/usr -Dgtk_doc=false build/pango/_build build/pango
+  - sudo ninja -C build/pango/_build -j 1
+  - sudo ninja -C build/pango/_build install
+
+#gtk4
+  - sudo git clone https://github.com/GNOME/gtk.git build/gtk4
+  - sudo git --work-tree=build/gtk4 --git-dir=build/gtk4/.git checkout tags/4.2.1 -b 4.2.1
+  - sudo mkdir -p build/gtk4/_build
+  - sudo meson -Dprefix=/usr -Dvulkan=enabled -Dwayland-backend=false -Dbroadway-backend=false -Dprint-backends=none -Dman-pages=false -Dgtk_doc=false -Ddemos=false -Dmedia=ffmpeg -Dbuild-examples=false -Dbuild-tests=false -Dinstall-tests=false build/gtk4/_build build/gtk4
+  - sudo ninja -C build/gtk4/_build -j 1
+  - sudo ninja -C build/gtk4/_build install
+
 #gradle
-  - sudo ./gradlew build
+  - sudo ./gradlew build --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2
