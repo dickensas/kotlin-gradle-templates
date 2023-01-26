@@ -13,6 +13,13 @@ jobs:
   fast_finish: true
 
 script:
+#openjdk8
+  - sudo chmod 777 gradlew
+  - export JAVA_HOME=/usr/local/lib/jvm/openjdk17
+  - export PATH=$JAVA_HOME/bin:$PATH
+  - sudo apt-get -y install libncurses5
+  - sudo apt-get update
+
 #openal
   - sudo apt-get -y install libopenal-dev
 
@@ -38,4 +45,4 @@ script:
   - sudo mkdir -p build/vulkan
 
 #gradle
-  - which java
+  - ./gradlew assemble
