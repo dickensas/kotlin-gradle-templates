@@ -45,4 +45,4 @@ script:
   - sudo mkdir -p build/vulkan
 
 #gradle
-  - sudo ./gradlew assemble
+  - sudo ./gradlew build
