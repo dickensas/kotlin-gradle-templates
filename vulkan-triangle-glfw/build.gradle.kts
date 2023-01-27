@@ -50,6 +50,20 @@ kotlin {
             }
         }
     }
+	sourceSets {
+		val mingwMain by creating {}
+		val linuxMain by creating {}
+		if (hostOs == "Linux") {
+			linuxX64("libgnuplot").compilations["main"].defaultSourceSet {
+				dependsOn(linuxMain)
+			}
+	    }
+	    if (hostOs.startsWith("Windows")) {
+			mingwX64("libgnuplot").compilations["main"].defaultSourceSet {
+				dependsOn(mingwMain)
+			}
+	    }
+	}
 }
 
 tasks {

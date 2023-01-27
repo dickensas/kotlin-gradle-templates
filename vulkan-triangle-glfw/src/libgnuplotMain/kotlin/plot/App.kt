@@ -8,6 +8,7 @@ import kotlin.native.concurrent.attach
 
 import vulkan.*
 import glfw.*
+import plot.*
 
 fun loadShader(fileName:String, vk_ldevice:VkDevice) = memScoped {
     fun fail(): Nothing = throw Error("Cannot read input file $fileName")
@@ -385,30 +386,7 @@ fun main() = memScoped {
         
         println("Vulkan successfully initialized")
         
-        if (
-            !extensions.contains("VK_KHR_surface") || 
-            !extensions.contains("VK_KHR_win32_surface")
-        )
-        throw RuntimeException("Needed extensions not supported")
-        
-        //#3 create Vulcan surface
-        
-        val vk_surface = memScoped {
-            var output = alloc<VkSurfaceKHRVar>()
-            val createInfo = alloc<VkWin32SurfaceCreateInfoKHR> {
-                sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR
-                pNext = null
-                flags = 0u
-                hinstance = GetModuleHandle!!(null) as vulkan.HINSTANCE
-                hwnd = glfwGetWin32Window(window) as vulkan.HWND
-            }
-            var result = vkCreateWin32SurfaceKHR(vk_instance, createInfo.ptr, null, output.ptr)
-            
-            if(result != VK_SUCCESS)
-                throw RuntimeException("Failed to create vk surface")
-                
-            output.value
-        }
+        val vk_surface:VkSurfaceKHR? = surfaceInit(extensions, window, vk_instance)
         
         println("Vulkan surface initialized")
         
