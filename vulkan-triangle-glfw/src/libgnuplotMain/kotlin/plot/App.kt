@@ -1,7 +1,6 @@
 package plot
 
 import platform.posix.*
-import platform.windows.GetModuleHandle
 import kotlinx.cinterop.*
 import kotlin.native.concurrent.DetachedObjectGraph
 import kotlin.native.concurrent.attach
