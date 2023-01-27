@@ -21,6 +21,10 @@ kotlin {
         mingwX64()
     }
     targets.withType(KotlinNativeTarget::class.java) {
+		sourceSets["${targetName}Main"].apply {
+            kotlin.srcDir("src/libgnuplotMain/kotlin")
+        }
+
         binaries {
             executable {
                 entryPoint = "plot.main"
