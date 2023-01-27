@@ -23,7 +23,6 @@ fun surfaceInit(extensions: MutableList<String>, window:CValuesRef<GLFWwindow>?,
             sType = VK_STRUCTURE_TYPE_XCB_SURFACE_CREATE_INFO_KHR
             pNext = null
             flags = 0u
-			hwnd = glfwGetGLXWindow(window) as vulkan.HWND
         }
         var result = vkCreateXcbSurfaceKHR(vk_instance, createInfo.ptr, null, output.ptr)
         
