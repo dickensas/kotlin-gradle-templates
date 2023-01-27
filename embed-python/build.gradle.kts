@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") version "1.7.21"
+    id("org.jetbrains.kotlin.multiplatform") version "1.8.0"
 }
 val userHome = File(System.getenv("USERPROFILE") ?: System.getenv("HOME"))
 repositories {
@@ -12,25 +12,22 @@ repositories {
 kotlin {
 	val hostOs = System.getProperty("os.name")
     if (hostOs == "Mac OS X") {
-        macosX64()
+        macosX64("libgnuplot")
     }
     if (hostOs == "Linux") {
-        linuxX64()
+        linuxX64("libgnuplot")
     }
     if (hostOs.startsWith("Windows")) {
-        mingwX64()
+        mingwX64("libgnuplot")
     }
-    targets.withType(KotlinNativeTarget::class.java) {
-		sourceSets["${targetName}Main"].apply {
-            kotlin.srcDir("src/libgnuplotMain/kotlin")
-        }
-
+    targets.withType<KotlinNativeTarget> {
         binaries {
             executable {
                 entryPoint = "plot.main"
 				when (preset) {
-					presets["macosX64"] -> linkerOpts("-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib", "-L${project.rootDir}")
+					presets["mingwX64"] -> linkerOpts("-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib", "-L${project.rootDir}")
 					presets["linuxX64"] -> linkerOpts("-L${project.rootDir}")
+					presets["macosX64"] -> linkerOpts("-L${project.rootDir}")
 				}
             }
         }
@@ -39,6 +36,7 @@ kotlin {
 				when (preset) {
 	                presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python3.10")
 					presets["linuxX64"] -> includeDirs("/usr/include", "/usr/include/python3.10")
+					presets["macosX64"] -> includeDirs("/usr/include", "/usr/include/python3.10")
 				}
             }
         }
