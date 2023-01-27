@@ -22,7 +22,7 @@ script:
   - sudo apt-get -y install libopenal-dev
 
 #gcc multilib
-  - sudo apt-get -y gcc-multilib g++-multilib
+  - sudo apt-get -y install gcc-multilib g++-multilib
 
 #python
   - sudo apt-get -y install libpython3.10 --fix-missing
