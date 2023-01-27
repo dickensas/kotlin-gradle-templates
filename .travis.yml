@@ -87,7 +87,7 @@ script:
 
 #vulkan headers
   - sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
-  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.237 -b v1.3.237
   - sudo mkdir -p build/vulkan/_build
   - sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
   - sudo cmake --build build/vulkan/_build --target install
@@ -96,7 +96,7 @@ script:
 #vulkan loader
   - sudo mkdir -p build/vulkan
   - sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkan
-  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+  - sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.237 -b v1.3.237
   - sudo mkdir -p build/vulkan/_build
   - sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
   - sudo cmake --build build/vulkan/_build --target install
@@ -106,7 +106,7 @@ script:
 
 #glib2
   - sudo git clone https://github.com/GNOME/glib.git build/glib2
-  - sudo git --work-tree=build/glib2 --git-dir=build/glib2/.git checkout tags/2.68.3 -b 2.68.3
+  - sudo git --work-tree=build/glib2 --git-dir=build/glib2/.git checkout tags/2.68.3 -b 2.74.5
   - sudo mkdir -p build/glib2/_build
   - sudo meson -Dprefix=/usr -Dtests=false build/glib2/_build build/glib2
   - sudo ninja -C build/glib2/_build -j 1
@@ -114,7 +114,7 @@ script:
 
 #pango
   - sudo git clone https://github.com/GNOME/pango.git build/pango
-  - sudo git --work-tree=build/pango --git-dir=build/pango/.git checkout tags/1.48.7 -b 1.48.7
+  - sudo git --work-tree=build/pango --git-dir=build/pango/.git checkout tags/1.50.12 -b 1.50.12
   - sudo mkdir -p build/pango/_build
   - sudo meson -Dprefix=/usr -Dgtk_doc=false build/pango/_build build/pango
   - sudo ninja -C build/pango/_build -j 1
@@ -122,7 +122,7 @@ script:
 
 #gtk4
   - sudo git clone https://github.com/GNOME/gtk.git build/gtk4
-  - sudo git --work-tree=build/gtk4 --git-dir=build/gtk4/.git checkout tags/4.2.1 -b 4.2.1
+  - sudo git --work-tree=build/gtk4 --git-dir=build/gtk4/.git checkout tags/4.9.2 -b 4.9.2
   - sudo mkdir -p build/gtk4/_build
   - sudo meson -Dprefix=/usr -Dvulkan=enabled -Dwayland-backend=false -Dbroadway-backend=false -Dman-pages=false -Dgtk_doc=false -Ddemos=false -Dbuild-examples=false -Dbuild-tests=false -Dinstall-tests=false build/gtk4/_build build/gtk4
   - sudo ninja -C build/gtk4/_build -j 1
