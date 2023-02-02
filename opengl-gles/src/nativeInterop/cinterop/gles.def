@@ -1,0 +1,6 @@
+headers = EGL\\egl.h EGL\\eglext.h GLES2\\gl2.h GLES2\\gl2ext.h
+staticLibraries = libEGL.dll.a libGLESv2.dll.a libGLESv2.dll libEGL.dll
+package = gles
+libraryPaths = C:\\msys64\\mingw64\\lib C:\\msys64\\mingw64\\bin
+linkerOpts = -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\bin -lEGL.dll -lGLESv2.dll
+compilerOpts = -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\bin -lEGL.dll -lGLESv2.dll

@@ -1,0 +1,6 @@
+headers = GLFW/glfw3.h GLFW/glfw3native.h
+staticLibraries = libglfw3.a libgdi32.a glfw3.dll libGLESv2.dll libEGL.dll
+package = glfw
+libraryPaths = C:\\msys64\\mingw64\\lib C:\\msys64\\mingw64\\bin
+linkerOpts = -DGLFW_INCLUDE_ES2 -DGLFW_EXPOSE_NATIVE_EGL -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\bin -lgdi32 -lglfw3 -lEGL.dll -lGLESv2.dll
+compilerOpts = -DGLFW_INCLUDE_ES2 -DGLFW_EXPOSE_NATIVE_EGL -LC:\\msys64\\mingw64\\lib -LC:\\msys64\\mingw64\\bin -lgdi32 -lglfw3 -lEGL.dll -lGLESv2.dll
