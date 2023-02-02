@@ -1,0 +1,130 @@
+image: Ubuntu2004
+
+cache:
+- /home/appveyor/.gradle/caches
+- /root/.gradle/caches
+- /root/.konan/cache
+
+install:
+
+#openal
+- sh: sudo apt-get -y install libopenal-dev
+
+#python
+- sh: sudo apt-get -y install libpython3.9 --fix-missing
+- sh: sudo apt-get -y install python3.9-full
+- sh: sudo apt-get -y install python3.9-dev
+
+#pip
+- sh: sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
+- sh: sudo python3 get-pip.py
+- sh: sudo python3 -m pip install --upgrade pip
+- sh: sudo python3 -m pip install --upgrade setuptools 
+- sh: sudo python3 -m pip install --upgrade wheel
+
+#build tools
+- sh: sudo python3 -m pip install meson
+- sh: sudo python3 -m pip install ninja
+- sh: sudo python3 -m pip install cmake
+- sh: sudo mkdir -p build/gtk4
+- sh: sudo mkdir -p build/glib2
+- sh: sudo mkdir -p build/pango
+- sh: sudo mkdir -p build/vulkan
+
+#midi
+- sh: sudo apt-get -y install libjack-dev libtool bzip2 m4 automake
+- sh: sudo apt-get -y install libalsaplayer-dev libasound2-dev
+- sh: sudo mkdir -p build/rtmidi
+- sh: sudo git clone https://github.com/thestk/rtmidi.git build/rtmidi
+- sh: sudo git --work-tree=build/rtmidi --git-dir=build/rtmidi/.git checkout tags/4.0.0 -b 4.0.0
+- sh: sudo chmod -R 755 build
+- sh: cd build/rtmidi
+- sh: sudo ./autogen.sh
+- sh: sudo ./configure --prefix=/usr
+- sh: sudo make
+- sh: sudo make install
+- sh: cd ../..
+
+#openjdk8
+- sh: sudo chmod 777 gradlew
+- sh: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+- sh: export PATH=$JAVA_HOME/bin:$PATH
+- sh: sudo apt-get -y install libncurses5
+- sh: sudo apt-get update
+
+#mathgl dependencies
+- sh: sudo apt-get -y install libegl1-mesa libegl1-mesa-dev
+- sh: sudo apt-get -y install libgles2-mesa-dev libglfw3-dev libglfw3
+- sh: sudo apt-get -y install libglew-dev libglew2.1 freeglut3-dev
+- sh: sudo mkdir -p build/mathgl-2.4.4
+
+#mathgl
+- sh: sudo wget --no-check-certificate -c "https://nchc.dl.sourceforge.net/project/mathgl/mathgl/mathgl 2.4.4/mathgl-2.4.4.tar.gz" -O - | sudo tar -xz -C build
+- sh: sudo mkdir -p build/mathgl-2.4.4/_build
+- sh: sudo cmake build/mathgl-2.4.4 -B build/mathgl-2.4.4/_build -DCMAKE_INSTALL_PREFIX=/usr -D enable-glut=on
+- sh: sudo cmake --build build/mathgl-2.4.4/_build --target install
+
+#gtk dependencies big install list
+- sh: sudo apt-get -y install libelf++0 libelf1 libelf-dev
+- sh: sudo apt-get -y install libxml2 libxml2-dev libxml2-utils 
+- sh: sudo apt-get -y install libxslt1-dev libxslt1.1
+- sh: sudo apt-get -y install libxkbcommon-dev libxrandr-dev libxrender-dev
+- sh: sudo apt-get -y install libxi-dev libxdamage-dev libxfixes-dev
+- sh: sudo apt-get -y install libxext-dev libxcursor-dev libfontconfig-dev
+- sh: sudo apt-get -y install libx11-dev libwayland-dev libpng-dev
+- sh: sudo apt-get -y install libc6-dev libc6 libc6-amd64
+- sh: sudo apt-get -y install libpng-dev libjpeg-dev
+- sh: sudo apt-get -y install libspectre-dev libspectre1 libpixman-1-dev
+- sh: sudo apt-get -y install libxcb-shm0 libxcb-shm0-dev sysprof
+- sh: sudo apt-get -y install libicu-dev libthai-dev libcolord-dev
+- sh: sudo apt-get -y install libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev
+- sh: sudo apt-get -y install ffmpeg libatk1.0-dev libglm-dev iso-codes
+- sh: sudo apt-get -y install libgraphene-1.0-dev libgraphene-1.0-0 
+- sh: sudo apt-get -y install sassc hicolor-icon-theme
+- sh: sudo apt-get -y install pkg-config bison gettext xsltproc
+
+#vulkan headers
+- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo mkdir -p build/vulkan/_build
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake --build build/vulkan/_build --target install
+- sh: sudo rm -fr build/vulkan
+
+#vulkan loader
+- sh: sudo mkdir -p build/vulkan
+- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkan
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo mkdir -p build/vulkan/_build
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake --build build/vulkan/_build --target install
+
+#rsvg
+- sh: sudo apt-get -y install librsvg2-dev
+
+#glib2
+- sh: sudo git clone https://github.com/GNOME/glib.git build/glib2
+- sh: sudo git --work-tree=build/glib2 --git-dir=build/glib2/.git checkout tags/2.68.3 -b 2.68.3
+- sh: sudo mkdir -p build/glib2/_build
+- sh: sudo meson -Dprefix=/usr -Dtests=false build/glib2/_build build/glib2
+- sh: sudo ninja -C build/glib2/_build -j 1
+- sh: sudo ninja -C build/glib2/_build install
+
+#pango
+- sh: sudo git clone https://github.com/GNOME/pango.git build/pango
+- sh: sudo git --work-tree=build/pango --git-dir=build/pango/.git checkout tags/1.48.7 -b 1.48.7
+- sh: sudo mkdir -p build/pango/_build
+- sh: sudo meson -Dprefix=/usr -Dgtk_doc=false build/pango/_build build/pango
+- sh: sudo ninja -C build/pango/_build -j 1
+- sh: sudo ninja -C build/pango/_build install
+
+#gtk4
+- sh: sudo git clone https://github.com/GNOME/gtk.git build/gtk4
+- sh: sudo git --work-tree=build/gtk4 --git-dir=build/gtk4/.git checkout tags/4.2.1 -b 4.2.1
+- sh: sudo mkdir -p build/gtk4/_build
+- sh: sudo meson -Dprefix=/usr -Dvulkan=enabled -Dwayland-backend=false -Dbroadway-backend=false -Dprint-backends=none -Dman-pages=false -Dgtk_doc=false -Ddemos=false -Dmedia=ffmpeg -Dbuild-examples=false -Dbuild-tests=false -Dinstall-tests=false build/gtk4/_build build/gtk4
+- sh: sudo ninja -C build/gtk4/_build -j 1
+- sh: sudo ninja -C build/gtk4/_build install
+
+build_script:
+- sh: sudo ./gradlew assemble --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2
