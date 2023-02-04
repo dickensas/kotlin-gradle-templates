@@ -34,38 +34,8 @@ kotlin {
         }
         compilations["main"].cinterops {
             val python by creating {
-				var verson = System.getenv("python_version")
-				try {
-					var builder = ProcessBuilder("python3","--version")
-					builder.redirectErrorStream(true)
-	                var process = builder.start()
-					var processStdout = process.getErrorStream()
-	                var reader = BufferedReader(InputStreamReader(processStdout))
-					var line = ""
-					while (line != null) {
-						try{
-							line = reader.readLine()
-						}catch(e1:Exception){
-							break;
-						}
-					    println(line)
-					    if (line.contains("Python 3.10")) {
-					       verson = "3.10"
-					    } else if (line.contains("Python 3.9")) {
-					       verson = "3.9"
-					    } else if (line.contains("Python 3.8")) {
-					       verson = "3.8"
-					    } else if (line.contains("Python 3.7")) {
-					       verson = "3.7"
-					    }
-					}
-					reader.close()
-				} catch (e:Exception) {
-					e.printStackTrace()
-				}
+				var verson = System.getProperty("python_version")
 				defFile("${project.rootDir}/embed-python/src/nativeInterop/cinterop/python${verson}.def")
-				
-				
 
 				when (preset) {
 	                presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python${verson}")
