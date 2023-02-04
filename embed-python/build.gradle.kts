@@ -36,7 +36,7 @@ kotlin {
             val python by creating {
 				var verson = "3.10"
 				try {
-					var builder = ProcessBuilder("python","--version")
+					var builder = ProcessBuilder("python3","--version")
 					builder.redirectErrorStream(true)
 	                var process = builder.start()
 					var processStdout = process.getErrorStream()
