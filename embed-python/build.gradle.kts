@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import java.io.*
 plugins {
     id("org.jetbrains.kotlin.multiplatform") version "1.8.0"
 }
@@ -33,10 +34,41 @@ kotlin {
         }
         compilations["main"].cinterops {
             val python by creating {
+				var verson = "3.10"
+				try {
+					var builder = ProcessBuilder("python","--version")
+					builder.redirectErrorStream(true)
+	                var process = builder.start()
+					var processStdout = process.getErrorStream()
+	                var reader = BufferedReader(InputStreamReader(processStdout))
+					var line = ""
+					while (line != null) {
+						try{
+							line = reader.readLine()
+						}catch(e1:Exception){break;}
+					    println(line)
+					    if (line.contains("Python 3.10")) {
+					       verson = "3.10"
+					    } else if (line.contains("Python 3.9")) {
+					       verson = "3.9"
+					    } else if (line.contains("Python 3.8")) {
+					       verson = "3.8"
+					    } else if (line.contains("Python 3.7")) {
+					       verson = "3.7"
+					    }
+					}
+					reader.close()
+				} catch (e:Exception) {
+					e.printStackTrace()
+				}
+				defFile("${project.rootDir}/src/nativeInterop/cinterop/python${verson}.def")
+				
+				
+
 				when (preset) {
-	                presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python3.10")
-					presets["linuxX64"] -> includeDirs("/usr/include", "/usr/include/python3.10")
-					presets["macosX64"] -> includeDirs("/usr/include", "/usr/include/python3.10")
+	                presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/python${verson}")
+					presets["linuxX64"] -> includeDirs("/usr/include", "/usr/include/python${verson}")
+					presets["macosX64"] -> includeDirs("/usr/include", "/usr/include/python${verson}")
 				}
             }
         }

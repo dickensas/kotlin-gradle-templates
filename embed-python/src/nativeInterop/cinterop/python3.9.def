@@ -1,0 +1,10 @@
+headers = python3.9/Python.h python3.9/object.h python3.9/pythonrun.h
+package = python
+headerFilter = python3.9/* python3.9/cpython/*
+libraryPaths.mingw =  C:/msys64/mingw64/lib
+linkerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib  -llibpython3.9
+compilerOpts.mingw = -DPY_SSIZE_T_CLEAN -LC:/msys64/mingw64/lib  -llibpython3.9
+
+libraryPaths.linux = /lib /usr/lib /usr/lib/python3.9/config-3.8-x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
+linkerOpts.linux = -L/lib -L/usr/lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python3.9/config-3.8-x86_64-linux-gnu -lpython3.9
+compilerOpts.linux = -L/lib -L/usr/lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/python3.9/config-3.8-x86_64-linux-gnu -lpython3.9
