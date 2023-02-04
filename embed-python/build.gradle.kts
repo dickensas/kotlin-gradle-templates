@@ -46,7 +46,6 @@ kotlin {
 						try{
 							line = reader.readLine()
 						}catch(e1:Exception){
-							println(e1.getMessage())
 							break;
 						}
 					    println(line)
