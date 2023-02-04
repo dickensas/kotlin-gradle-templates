@@ -61,7 +61,7 @@ kotlin {
 				} catch (e:Exception) {
 					e.printStackTrace()
 				}
-				defFile("${project.rootDir}/src/nativeInterop/cinterop/python${verson}.def")
+				defFile("${project.rootDir}/embed-python/src/nativeInterop/cinterop/python${verson}.def")
 				
 				
 
