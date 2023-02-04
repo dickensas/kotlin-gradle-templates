@@ -34,7 +34,7 @@ kotlin {
         }
         compilations["main"].cinterops {
             val python by creating {
-				var verson = "3.10"
+				var verson = System.getenv("python_version")
 				try {
 					var builder = ProcessBuilder("python3","--version")
 					builder.redirectErrorStream(true)
@@ -45,7 +45,10 @@ kotlin {
 					while (line != null) {
 						try{
 							line = reader.readLine()
-						}catch(e1:Exception){break;}
+						}catch(e1:Exception){
+							println(e1.getMessage())
+							break;
+						}
 					    println(line)
 					    if (line.contains("Python 3.10")) {
 					       verson = "3.10"
