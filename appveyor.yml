@@ -129,6 +129,4 @@ install:
 - sh: sudo ninja -C build/gtk4/_build install
 
 build_script:
-- sh: echo Python executable location
-- sh: sudo which python3
 - sh: sudo ./gradlew build --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2
