@@ -6,20 +6,22 @@ The code is ready to execute
 
 If you have gradle in path, then invoke gradle as
 
-     gradle assemble
+     gradle assemble -Dpython_version=3.10
 
 If you have wrapper for linux
 
-     ./gradlew assemble
+     ./gradlew assemble -Dpython_version=3.10
 
 If you have wrapper for windows
 
-     .\gradlew assemble
+     .\gradlew assemble -Dpython_version=3.10
 
 Then execute bellow task to start the OpenGL application
 
-     .\gradlew runReleaseExecutableLibgnuplot
+     .\gradlew runReleaseExecutableLibgnuplot -Dpython_version=3.10
      
+You can change the version 3.10 to 3.9 or 3.8 or 3.7
+
 You will get the output like this
 
 Today is Sat Nov 23 11:47:45 2019
