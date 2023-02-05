@@ -6,5 +6,5 @@ linkerOpts.mingw = -DGLFW_EXPOSE_NATIVE_WIN32 -LC:/msys64/mingw64/lib  -lgdi32 -
 compilerOpts.mingw = -DGLFW_EXPOSE_NATIVE_WIN32 -LC:/msys64/mingw64/lib  -lgdi32 -lglfw3
 
 libraryPaths.linux =  /usr/lib
-linkerOpts.linux = -DGLFW_EXPOSE_NATIVE_OSMESA -DGLFW_EXPOSE_NATIVE_GLX -L/usr/lib  -lgdi32 -lglfw3
-compilerOpts.linux = -DGLFW_EXPOSE_NATIVE_OSMESA -DGLFW_EXPOSE_NATIVE_GLX -L/usr/lib  -lgdi32 -lglfw3
+linkerOpts.linux = -DGLFW_EXPOSE_NATIVE_GLX -L/usr/lib  -lgdi32 -lglfw3
+compilerOpts.linux = -DGLFW_EXPOSE_NATIVE_GLX -L/usr/lib  -lgdi32 -lglfw3
