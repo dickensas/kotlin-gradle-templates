@@ -82,7 +82,7 @@ install:
 - sh: sudo apt-get -y install libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev
 - sh: sudo apt-get -y install ffmpeg libatk1.0-dev libglm-dev iso-codes
 - sh: sudo apt-get -y install libgraphene-1.0-dev libgraphene-1.0-0 
-- sh: sudo apt-get -y install sassc hicolor-icon-theme
+- sh: sudo apt-get -y install sassc hicolor-icon-theme libosmesa6
 - sh: sudo apt-get -y install pkg-config bison gettext xsltproc gcc-multilib
 
 #vulkan headers
