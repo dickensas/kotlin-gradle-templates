@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/github/dickensas/kotlin-gradle-templates?svg=true)](https://ci.appveyor.com/project/dickensas/kotlin-gradle-templates)
 # kotlin-gradle-templates
 Quick start kotlin gradle DSL
 
