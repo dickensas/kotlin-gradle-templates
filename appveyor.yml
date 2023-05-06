@@ -85,7 +85,10 @@ install:
 - sh: sudo apt-get -y install sassc hicolor-icon-theme libosmesa6 libosmesa6-dev
 - sh: sudo apt-get -y install pkg-config bison gettext xsltproc gcc-multilib
 - sh: sudo apt-get -y install glslang-tools glslang-dev libgstreamer1.0-0 libgstreamer1.0-dev
-- sh: sudo apt-get -y install spirv-tools spirv-headers libllvmspirvlib-dev libllvmspirvlib10  llvm-spirv
+- sh: sudo apt-get -y install spirv-tools spirv-headers libllvmspirvlib-dev libllvmspirvlib10
+- sh: sudo apt-get -y install libgstreamer-gl1.0-0 libgstreamer1.0-0 libgstreamer1.0-dev
+- sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
+- sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
 
 #vulkan headers
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
@@ -131,4 +134,4 @@ install:
 - sh: sudo ninja -C build/gtk4/_build install
 
 build_script:
-- sh: sudo chdir kotlin-libxml2 && sudo ./gradlew linkReleaseExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9 && chdir ..
+- sh: sudo ./gradlew assemble --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
