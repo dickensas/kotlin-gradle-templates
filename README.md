@@ -61,3 +61,4 @@ This directory contains a set of boilerplate gradle script to kick start kotlin
   * `android-multiplatform` - Android Gradle KTS with external library usage
   * `kotlin-fortran` - Gradle KTS for Combining Kotlin and Fortran
   * `kotlin-midi` - Kotlin code for reading Midi port
+  * `kotlin-libxml2` - Kotlin code for reading XML and applying XSL on it

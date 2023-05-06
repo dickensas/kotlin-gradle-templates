@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 rootProject.name = "kotlin-gradle-templates"
-include("embed-python")
+include("kotlin-libxml2")

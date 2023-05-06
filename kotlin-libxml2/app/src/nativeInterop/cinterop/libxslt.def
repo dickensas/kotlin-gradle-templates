@@ -1,0 +1,5 @@
+headers = libxslt/xslt.h libxslt/xsltutils.h libxslt/transform.h
+package = libxslt
+libraryPaths = C:/msys64/mingw64/lib
+linkerOpts =  -LC:/msys64/mingw64/lib -lxslt
+compilerOpts = -LC:/msys64/mingw64/lib -lxslt
