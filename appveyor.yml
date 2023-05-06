@@ -84,6 +84,7 @@ install:
 - sh: sudo apt-get -y install libgraphene-1.0-dev libgraphene-1.0-0 
 - sh: sudo apt-get -y install sassc hicolor-icon-theme libosmesa6 libosmesa6-dev
 - sh: sudo apt-get -y install pkg-config bison gettext xsltproc gcc-multilib
+- sh: sudo apt-get -y install glslc glslang-tools glslang-dev libgstreamer1.0-0 libgstreamer1.0-dev
 
 #vulkan headers
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
