@@ -85,6 +85,7 @@ install:
 - sh: sudo apt-get -y install sassc hicolor-icon-theme libosmesa6 libosmesa6-dev
 - sh: sudo apt-get -y install pkg-config bison gettext xsltproc gcc-multilib
 - sh: sudo apt-get -y install glslang-tools glslang-dev libgstreamer1.0-0 libgstreamer1.0-dev
+- sh: sudo apt-get -y install spirv-tools spirv-headers libllvmspirvlib-dev libllvmspirvlib10  llvm-spirv
 
 #vulkan headers
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
