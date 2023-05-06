@@ -1,19 +1,16 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import java.io.*
 plugins {
     id("org.jetbrains.kotlin.multiplatform") version "1.8.10"
 }
-
 val userHome = File(System.getenv("USERPROFILE") ?: System.getenv("HOME"))
-
 repositories {
     mavenCentral()
 	mavenLocal()
     google()
 }
-
 kotlin {
-   val hostOs = System.getProperty("os.name")
+	val hostOs = System.getProperty("os.name")
     if (hostOs == "Mac OS X") {
         macosX64("libgnuplot")
     }
@@ -23,7 +20,6 @@ kotlin {
     if (hostOs.startsWith("Windows")) {
         mingwX64("libgnuplot")
     }
-    
     targets.withType<KotlinNativeTarget> {
         binaries {
             executable {
