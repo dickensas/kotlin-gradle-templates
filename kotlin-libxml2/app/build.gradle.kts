@@ -35,8 +35,8 @@ kotlin {
             val libxslt by creating {
                when (preset) {
                   presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/libxml2")
-				  presets["linuxX64"] -> includeDirs("/usr/include", "/usr/include/libxml2")
-				  presets["macosX64"] -> includeDirs("/usr/include", "/usr/include/libxml2")
+				  presets["linuxX64"] -> includeDirs("/usr/include", "/usr/include/libxml")
+				  presets["macosX64"] -> includeDirs("/usr/include", "/usr/include/libxml")
                }
             }
         }
