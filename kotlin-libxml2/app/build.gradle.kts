@@ -35,15 +35,15 @@ kotlin {
             val libxml2 by creating {
                when (preset) {
                   presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/libxml2", "C:/msys64/mingw64/include/libxslt")
-				  presets["linuxX64"] -> includeDirs("${project.rootDir}/include", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
-				  presets["macosX64"] -> includeDirs("${project.rootDir}/include", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
+				  presets["linuxX64"] -> includeDirs("/usr/include/x86_64-linux-gnu", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
+				  presets["macosX64"] -> includeDirs("/usr/include/x86_64-linux-gnu", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
                }
             }
             val libxslt by creating {
                when (preset) {
                   presets["mingwX64"] -> includeDirs("C:/msys64/mingw64/include", "C:/msys64/mingw64/include/libxml2", "C:/msys64/mingw64/include/libxslt")
-				  presets["linuxX64"] -> includeDirs("${project.rootDir}/include", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
-				  presets["macosX64"] -> includeDirs("${project.rootDir}/include", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
+				  presets["linuxX64"] -> includeDirs("/usr/include/x86_64-linux-gnu", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
+				  presets["macosX64"] -> includeDirs("/usr/include/x86_64-linux-gnu", "/usr/include", "/usr/include/libxml2", "/usr/include/libxslt")
                }
             }
         }
