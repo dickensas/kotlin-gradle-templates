@@ -58,6 +58,7 @@ install:
 - sh: sudo apt-get -y install libegl1-mesa libegl1-mesa-dev
 - sh: sudo apt-get -y install libgles2-mesa-dev libglfw3-dev libglfw3
 - sh: sudo apt-get -y install libglew-dev libglew2.1 freeglut3-dev
+- sh: sudo apt-get -y install libpng-dev libpng++-dev libjpeg8-dev libjpeg-dev
 - sh: sudo mkdir -p build/mathgl-2.4.4
 
 #mathgl
