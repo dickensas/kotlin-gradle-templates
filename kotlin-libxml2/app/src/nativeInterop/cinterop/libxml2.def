@@ -1,5 +1,5 @@
 headers = libxml/parser.h libxml/tree.h
 package = libxml2
 libraryPaths = C:/msys64/mingw64/lib
-linkerOpts =  -LC:/msys64/mingw64/lib -lxml2
-compilerOpts = -LC:/msys64/mingw64/lib -lxml2
+linkerOpts =  -LC:/msys64/mingw64/lib -L/usr/lib/x86_64-linux-gnu -lxml2
+compilerOpts = -LC:/msys64/mingw64/lib -L/usr/lib/x86_64-linux-gnu -lxml2
