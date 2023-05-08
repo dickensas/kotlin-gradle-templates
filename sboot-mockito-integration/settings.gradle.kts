@@ -4,5 +4,5 @@ pluginManagement {
         mavenLocal()
     }
 }
-rootProject.name = "nlayer"
+rootProject.name = "sboot-mockito-integration"
 
