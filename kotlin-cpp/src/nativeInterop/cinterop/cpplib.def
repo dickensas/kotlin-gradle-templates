@@ -1,0 +1,10 @@
+headers = cpplib_c.h
+package = cpplib
+headerFilter = cpplib_c.h
+libraryPaths.mingw =  C:/msys64/mingw64/lib
+linkerOpts.mingw = -LC:/msys64/mingw64/lib  -lcpplib_c
+compilerOpts.mingw = -LC:/msys64/mingw64/lib  -lcpplib_c
+
+libraryPaths.linux = /lib /usr/lib /usr/lib/x86_64-linux-gnu
+linkerOpts.linux = -L/lib -L/usr/lib -L/usr/lib/x86_64-linux-gnu -lcpplib_c
+compilerOpts.linux = -L/lib -L/usr/lib -L/usr/lib/x86_64-linux-gnu -lcpplib_c
