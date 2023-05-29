@@ -136,3 +136,4 @@ install:
 
 build_script:
 - sh: sudo ./gradlew :kotlin-libxml2:app:linkReleaseExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
+- sh: sudo ./gradlew :vulkan-triangle-glfw:linkReleaseExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
