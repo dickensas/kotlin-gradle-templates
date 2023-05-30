@@ -83,6 +83,7 @@ install:
 - sh: sudo apt-get -y install libxcb-glx0 libxcb-glx0-dev libxcb-image0 libxcb-image0-dev
 - sh: sudo apt-get -y install libxcb-xinput-dev libxcb-xinput0 libxcb-xkb-dev libxcb-xkb1
 - sh: sudo apt-get -y install libxcb1 libxcb1-dev libxcb-present-dev libxcb-present0
+- sh: sudo apt-get -y install libx11-xcb-dev libxcb-randr0 libxcb-randr0-dev liblz4-dev libzstd-dev
 - sh: sudo apt-get -y install libicu-dev libthai-dev libcolord-dev
 - sh: sudo apt-get -y install libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev
 - sh: sudo apt-get -y install ffmpeg libatk1.0-dev libglm-dev iso-codes
