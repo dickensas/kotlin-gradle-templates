@@ -5,6 +5,6 @@ libraryPaths.mingw = C:\\msys64\\mingw64\\lib
 linkerOpts.mingw = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan-1.dll -LC:\\msys64\\mingw64\\lib
 compilerOpts.mingw = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan-1.dll -LC:\\msys64\\mingw64\\lib
 
-libraryPaths.linux = /usr/lib
-linkerOpts.linux = -lvulkan -L/usr/lib
-compilerOpts.linux = -DVK_USE_PLATFORM_XCB_KHR -lvulkan -L/usr/lib
+libraryPaths.linux = /usr/lib /usr/lib/x86_64-linux-gnu
+linkerOpts.linux = -lvulkan -L/usr/lib -L/usr/lib/x86_64-linux-gnu
+compilerOpts.linux = -DVK_USE_PLATFORM_XCB_KHR -lvulkan -L/usr/lib -L/usr/lib/x86_64-linux-gnu

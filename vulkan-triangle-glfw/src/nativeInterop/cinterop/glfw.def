@@ -5,6 +5,6 @@ libraryPaths.mingw =  C:/msys64/mingw64/lib
 linkerOpts.mingw = -LC:/msys64/mingw64/lib  -lgdi32 -lglfw3
 compilerOpts.mingw = -DGLFW_EXPOSE_NATIVE_WIN32 -LC:/msys64/mingw64/lib  -lgdi32 -lglfw3
 
-libraryPaths.linux =  /usr/lib
-linkerOpts.linux = -L/usr/lib -lglfw
-compilerOpts.linux = -DGLFW_EXPOSE_NATIVE_X11 -L/usr/lib -lglfw
+libraryPaths.linux =  /usr/lib /usr/lib/x86_64-linux-gnu
+linkerOpts.linux = -L/usr/lib -L/usr/lib/x86_64-linux-gnu -lglfw
+compilerOpts.linux = -DGLFW_EXPOSE_NATIVE_X11 -L/usr/lib -L/usr/lib/x86_64-linux-gnu -lglfw
