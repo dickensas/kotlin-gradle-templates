@@ -106,11 +106,11 @@ install:
 - sh: sudo git clone https://github.com/bminor/glibc.git build/glibc
 - sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
 - sh: sudo mkdir -p build/glibc/_build
-- sh: cd build/glibc
-- sh: sudo ./configure --prefix=/usr
+- sh: cd build/glibc/_build
+- sh: sudo ../configure --prefix=/usr
 - sh: sudo make
 - sh: sudo make install
-- sh: cd ../..
+- sh: cd ../../..
 
 #vulkan headers
 - sh: export CFLAGS="-lm -lstdc++"
