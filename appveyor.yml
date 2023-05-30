@@ -95,7 +95,39 @@ install:
 - sh: sudo apt-get -y install libgstreamer-gl1.0-0 libgstreamer1.0-0 libgstreamer1.0-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
-- sh: sudo apt-get -y install libvulkan-dev libvulkan1
+
+#vulkan headers
+- sh: export CFLAGS=-lm
+- sh: export CXXFLAGS=-lm
+- sh: export LIBS=-lm
+- sh: export GCC_COVERAGE_COMPILE_FLAGS=-lm
+- sh: export GCC_COVERAGE_LINK_FLAGS=-lm    
+- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo mkdir -p build/vulkan/_build
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake --build build/vulkan/_build --target install
+- sh: sudo rm -fr build/vulkan
+
+#vulkan loader
+- sh: export CFLAGS=-lm
+- sh: export CXXFLAGS=-lm
+- sh: export LIBS=-lm
+- sh: export GCC_COVERAGE_COMPILE_FLAGS=-lm
+- sh: export GCC_COVERAGE_LINK_FLAGS=-lm
+- sh: sudo mkdir -p build/vulkan
+- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkan
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo mkdir -p build/vulkan/_build
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake --build build/vulkan/_build --target install
+
+#reset cflags
+- sh: export CFLAGS=
+- sh: export CXXFLAGS=
+- sh: export LIBS=
+- sh: export GCC_COVERAGE_LINK_FLAGS=
+- sh: export GCC_COVERAGE_COMPILE_FLAGS=
 
 #rsvg
 - sh: sudo apt-get -y install librsvg2-dev
