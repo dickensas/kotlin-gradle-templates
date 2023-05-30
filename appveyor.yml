@@ -107,7 +107,7 @@ install:
 - sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
 - sh: sudo mkdir -p build/glibc/_build
 - sh: cd build/glibc/_build
-- sh: sudo ../configure --prefix=/usr
+- sh: sudo ../configure --prefix=/usr --enable-cet
 - sh: sudo make
 - sh: sudo make install
 - sh: cd ../../..
