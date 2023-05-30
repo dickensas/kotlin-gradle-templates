@@ -32,6 +32,7 @@ install:
 - sh: sudo mkdir -p build/glib2
 - sh: sudo mkdir -p build/pango
 - sh: sudo mkdir -p build/vulkan
+- sh: sudo mkdir -p build/glibc
 
 #midi
 - sh: sudo apt-get -y install libjack-dev libtool bzip2 m4 automake
@@ -95,6 +96,21 @@ install:
 - sh: sudo apt-get -y install libgstreamer-gl1.0-0 libgstreamer1.0-0 libgstreamer1.0-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
+
+#glibc
+- sh: export CFLAGS="-lm -lstdc++"
+- sh: export CXXFLAGS="-lm -lstdc++"
+- sh: export LIBS="-lm -lstdc++"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++"
+- sh: sudo git clone https://github.com/bminor/glibc.git build/glibc
+- sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
+- sh: sudo mkdir -p build/glibc/_build
+- sh: cd build/glibc
+- sh: sudo ./configure --prefix=/usr
+- sh: sudo make
+- sh: sudo make install
+- sh: cd ../..
 
 #vulkan headers
 - sh: export CFLAGS="-lm -lstdc++"
