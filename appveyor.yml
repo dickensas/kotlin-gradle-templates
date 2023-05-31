@@ -32,6 +32,7 @@ install:
 - sh: sudo mkdir -p build/glib2
 - sh: sudo mkdir -p build/pango
 - sh: sudo mkdir -p build/vulkan
+- sh: sudo mkdir -p build/vulkanl
 - sh: sudo mkdir -p build/glibc
 
 #midi
@@ -98,11 +99,11 @@ install:
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
 
 #glibc
-- sh: export CFLAGS="-lm -lstdc++"
-- sh: export CXXFLAGS="-lm -lstdc++"
-- sh: export LIBS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++"
+- sh: export CFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
+- sh: export LIBS="-lm -lstdc++ -lc"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lc -lstdc++"
 - sh: sudo git clone https://github.com/bminor/glibc.git build/glibc
 - sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
 - sh: sudo mkdir -p build/glibc/_build
@@ -113,11 +114,11 @@ install:
 - sh: cd ../../..
 
 #vulkan headers
-- sh: export CFLAGS="-lm -lstdc++"
-- sh: export CXXFLAGS="-lm -lstdc++"
-- sh: export LIBS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++"
+- sh: export CFLAGS="-lm -lstdc++ -lc"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc"
+- sh: export LIBS="-lm -lstdc++ -lc"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc"
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
 - sh: sudo mkdir -p build/vulkan/_build
@@ -126,17 +127,17 @@ install:
 - sh: sudo rm -fr build/vulkan
 
 #vulkan loader
-- sh: export CFLAGS="-lm -lstdc++"
-- sh: export CXXFLAGS="-lm -lstdc++"
-- sh: export LIBS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++"
-- sh: sudo mkdir -p build/vulkan
-- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkan
-- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
-- sh: sudo mkdir -p build/vulkan/_build
-- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
-- sh: sudo cmake --build build/vulkan/_build --target install
+- sh: export CFLAGS="-lm -lstdc++ -lc"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc"
+- sh: export LIBS="-lm -lstdc++ -lc"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc"
+- sh: sudo mkdir -p build/vulkanl
+- sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
+- sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo mkdir -p build/vulkanl/_build
+- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake --build build/vulkanl/_build --target install
 
 #reset cflags
 - sh: export CFLAGS=
