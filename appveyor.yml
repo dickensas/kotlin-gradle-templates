@@ -98,21 +98,6 @@ install:
 - sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
 
-#glibc
-- sh: export CFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
-- sh: export CXXFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
-- sh: export LIBS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lc -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
-- sh: sudo git clone https://github.com/bminor/glibc.git build/glibc
-- sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
-- sh: sudo mkdir -p build/glibc/_build
-- sh: cd build/glibc/_build
-- sh: sudo ../configure --prefix=/usr --enable-cet
-- sh: sudo make
-- sh: sudo make install
-- sh: cd ../../..
-
 #vulkan headers
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
