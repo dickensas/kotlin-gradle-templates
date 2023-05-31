@@ -99,11 +99,11 @@ install:
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
 
 #glibc
-- sh: export CFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
-- sh: export CXXFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
+- sh: export CFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export LIBS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lc -lstdc++"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lc -lstdc++ -lc -D_GNU_SOURCE -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo git clone https://github.com/bminor/glibc.git build/glibc
 - sh: sudo git --work-tree=build/glibc --git-dir=build/glibc/.git checkout tags/glibc-2.29 -b glibc-2.29
 - sh: sudo mkdir -p build/glibc/_build
@@ -114,11 +114,11 @@ install:
 - sh: cd ../../..
 
 #vulkan headers
-- sh: export CFLAGS="-lm -lstdc++ -lc"
-- sh: export CXXFLAGS="-lm -lstdc++ -lc"
-- sh: export LIBS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc"
+- sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
 - sh: sudo mkdir -p build/vulkan/_build
@@ -127,11 +127,11 @@ install:
 - sh: sudo rm -fr build/vulkan
 
 #vulkan loader
-- sh: export CFLAGS="-lm -lstdc++ -lc"
-- sh: export CXXFLAGS="-lm -lstdc++ -lc"
-- sh: export LIBS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc"
-- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc"
+- sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
+- sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo mkdir -p build/vulkanl
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
 - sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.2.179 -b v1.2.179
