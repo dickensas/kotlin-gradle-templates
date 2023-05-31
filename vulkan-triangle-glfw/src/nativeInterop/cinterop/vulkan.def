@@ -6,5 +6,5 @@ linkerOpts.mingw = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan-1.dll -LC:\\msys64\\ming
 compilerOpts.mingw = -DVK_USE_PLATFORM_WIN32_KHR -lvulkan-1.dll -LC:\\msys64\\mingw64\\lib
 
 libraryPaths.linux = /lib /lib/x86_64-linux-gnu /usr/lib /usr/lib/x86_64-linux-gnu
-linkerOpts.linux = -lstdc++ -lm -lc -lvulkan -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu
-compilerOpts.linux = -DVK_USE_PLATFORM_XCB_KHR -lstdc++ -lc -lm -lvulkan -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu
+linkerOpts.linux = -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu -ldl -lm -lstdc++ -lc -lvulkan 
+compilerOpts.linux = -DVK_USE_PLATFORM_XCB_KHR -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu -ldl -lm -lstdc++ -lc -lvulkan 

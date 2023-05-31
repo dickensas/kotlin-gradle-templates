@@ -105,7 +105,7 @@ install:
 - sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
-- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.131 -b v1.2.131
 - sh: sudo mkdir -p build/vulkan/_build
 - sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkan/_build --target install
@@ -119,7 +119,7 @@ install:
 - sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo mkdir -p build/vulkanl
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
-- sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.2.179 -b v1.2.179
+- sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.2.131 -b v1.2.131
 - sh: sudo mkdir -p build/vulkanl/_build
 - sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkanl/_build --target install
