@@ -11,7 +11,7 @@ namespace CppLib {
         public:
     		const char* copy(std::string str);
     		std::string greeting();
-    		std::string getline();
+    		std::string libgetline();
 			void open(std::string fname);
 			void close();
 			bool is_open();

@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
     const char* greeting();
-    const char* getline();
+    const char* libgetline();
 	void open(const char* fname);
 	void close();
 	int is_open();

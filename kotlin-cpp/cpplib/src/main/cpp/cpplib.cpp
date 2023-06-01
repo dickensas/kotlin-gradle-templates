@@ -12,7 +12,7 @@ const char* CppLib::Library::copy(std::string str) {
 	return arr;
 }
 
-std::string CppLib::Library::getline() {
+std::string CppLib::Library::libgetline() {
 	std::string eof("\\0");
 	if (file.is_open()) {
 		std::string line;

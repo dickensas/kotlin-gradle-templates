@@ -6,10 +6,10 @@ import cpplib.*
 fun main(args: Array<String>) = memScoped {
 	println(greeting()!!.toKString())
 	open("textfile.txt")
-	var line = getline()
+	var line = libgetline()
 	println(line!!.toKString())
 	while( line!!.toKString()!="\\0" ) {
-		line = getline()
+		line = libgetline()
 		println(line!!.toKString())
 	}
 	close()

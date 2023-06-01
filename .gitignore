@@ -23,7 +23,7 @@ gradle-app.setting
 **/.settings/*
 **/.classpath
 **/.project
-**/libfort1.o
-**/libfort1.so
-**/libfort1.dll
-**/libfort1.dll.a
+**/*.o
+**/*.so
+**/*.dll
+**/*.dll.a
