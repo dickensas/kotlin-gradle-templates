@@ -1,10 +1,17 @@
 package = libfort1
 
-libraryPaths = C:/msys64/mingw64/lib
-linkerOpts = -LC:/msys64/mingw64/lib -lfort1.dll -v
-compilerOpts = -LC:/msys64/mingw64/lib -lfort1.dll -v
+libraryPaths.mingw = C:/msys64/mingw64/lib
+linkerOpts.mingw = -LC:/msys64/mingw64/lib -lfort1.dll -v
+compilerOpts.mingw = -LC:/msys64/mingw64/lib -lfort1.dll -v
+
+libraryPaths.linux = /usr/lib
+linkerOpts.linux = -L/usr/lib -lfort1 -v
+compilerOpts.linux = -L/usr/lib -lfort1 -v
+
 
 ---
-
-extern void __stdcall test1();
-
+#ifdef WIN32
+	extern void __stdcall test1();
+#else
+	extern void test1();
+#endif

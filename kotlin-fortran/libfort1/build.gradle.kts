@@ -2,6 +2,8 @@ plugins {
     `cpp-library`
 }
 
+val hostOs = System.getProperty("os.name")
+
 class CompiterArgumentsAction : Action<MutableList<String>> {
 	override fun execute(args: MutableList<String>) {
 		args.clear()
@@ -10,8 +12,16 @@ class CompiterArgumentsAction : Action<MutableList<String>> {
         args.add("-fPIC")
 		args.add("-shared")
 		args.add("-o")
-		args.add("${project.name}.dll")
-        args.add("-Wl,--out-implib,${project.name}.dll.a")
+		if (hostOs.startsWith("Linux")) {
+			args.add("${project.name}.so")
+		}
+		if (hostOs.startsWith("Windows")) {
+			args.add("${project.name}.dll")
+        	args.add("-Wl,--out-implib,${project.name}.dll.a")
+	        args.add("-Wl,--output-def,${project.name}.def")
+	        args.add("-Wl,--export-all-symbols")
+	        args.add("-Wl,--enable-auto-import")
+        }
 	}
 }
 
@@ -27,9 +37,40 @@ class PlatformToolChainAction : Action<GccPlatformToolChain> {
 
 fun buildFile(path: String) = layout.buildDirectory.file(path)
 
+var linkArgs = listOf("")
+
 library {
-	targetMachines.add(machines.linux.x86_64)
-    targetMachines.add(machines.windows.x86_64)
+	if (hostOs == "Mac OS X") {
+        targetMachines.add(machines.macOS.x86_64)
+        linkArgs = listOf(
+        	"-v",
+        	"-shared",
+        	"-o",
+        	"${project.name}.so"
+        )
+    }
+    if (hostOs == "Linux") {
+        targetMachines.add(machines.linux.x86_64)
+        linkArgs = listOf(
+        	"-v",
+        	"-shared",
+        	"-o",
+        	"${project.name}.so"
+        )
+    }
+    if (hostOs.startsWith("Windows")) {
+        targetMachines.add(machines.windows.x86_64)
+        linkArgs = listOf(
+        	"-v",
+        	"-shared",
+        	"-o",
+        	"${project.name}.dll",
+        	"-Wl,--out-implib=${project.name}.dll.a", 
+            "-Wl,--export-all-symbols",
+            "-Wl,--enable-auto-import",
+            "-Wl,--output-def=${project.name}.def"
+        )
+    }
     linkage.set(listOf(Linkage.SHARED))
     toolChains.configureEach {
     	when (this) {
@@ -60,6 +101,7 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
         copy {
             from(fileTree("${project.rootDir}/${project.name}/build/obj/main/debug").matching {
                 include("${project.name}.d*")
+                include("${project.name}.so")
                 include("${project.name}.d*.*")
             })
             into("${project.rootDir}/${project.name}")
@@ -67,13 +109,7 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
     }
 	linkerArgs.addAll(toolChain.map { toolChain ->
 		when (toolChain) {
-            is Gcc, is Clang -> listOf(
-            	"-v",
-            	"-shared",
-            	"-o",
-            	"${project.name}.dll",
-            	"-Wl,--out-implib=${project.name}.dll.a"
-            )
+            is Gcc, is Clang -> linkArgs
             else -> listOf()
         }
     })
@@ -81,15 +117,34 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
         copy {
             from(fileTree("${project.rootDir}/${project.name}").matching {
                 include("${project.name}.d*")
+                include("${project.name}.so")
                 include("${project.name}.d*.*")
             })
             into("${project.rootDir}")
         }
+        if (hostOs.startsWith("Linux")) {
+        	copy {
+	        	from(fileTree("${project.rootDir}/${project.name}").matching {
+	                include("${project.name}.d*")
+	                include("${project.name}.so")
+	                include("${project.name}.d*.*")
+	            })
+	            into("/usr/lib")
+            }
+        }
     }
 }
-tasks.withType(Delete::class) {
+tasks.withType(Delete::class.java) {
+	if (hostOs.startsWith("Linux")) {
+		delete(fileTree("/usr/lib").matching {
+		    include("${project.name}.d*")
+		    include("${project.name}.so")
+			include("${project.name}.d*.*")
+		})
+	}
 	delete(fileTree("${project.rootDir}/${project.name}").matching {
 	    include("${project.name}.d*")
+	    include("${project.name}.so")
 		include("${project.name}.d*.*")
 	})
 }

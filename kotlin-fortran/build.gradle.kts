@@ -28,7 +28,7 @@ kotlin {
             executable {
                 entryPoint = "plot.main"
                 when (preset) {
-					presets["mingwX64"] -> linkerOpts("-L${project.rootDir}/libfort1","-L${project.rootDir}","-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib")
+					presets["mingwX64"] -> linkerOpts("-L${project.rootDir}\\libfort1","-L${project.rootDir}","-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib")
 					presets["linuxX64"] -> linkerOpts("-L${project.rootDir}/libfort1","-L${project.rootDir}","-L${userHome}/.konan/dependencies/x86_64-unknown-linux-gnu-gcc-8.3.0-glibc-2.19-kernel-4.9-2/x86_64-unknown-linux-gnu/lib64","-L${userHome}/.konan/dependencies/x86_64-unknown-linux-gnu-gcc-8.3.0-glibc-2.19-kernel-4.9-2/sysroot/usr/lib64")
 					presets["macosX64"] -> linkerOpts("-L${project.rootDir}")
 				}
@@ -45,7 +45,7 @@ kotlin {
         }
     }
 }
-tasks.withType(Delete::class) {
+tasks.withType(Delete::class.java) {
     dependsOn(":libfort1:clean")
     delete(rootProject.buildDir)
     delete(fileTree("${project.rootDir}").matching {
@@ -53,6 +53,6 @@ tasks.withType(Delete::class) {
         include("libfort1.d*.*")
     })
 }
-tasks.withType(AbstractCompile::class) {
+tasks.withType(AbstractCompile::class.java) {
     dependsOn(":libfort1:assemble")
 }

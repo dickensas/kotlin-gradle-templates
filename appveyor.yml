@@ -135,4 +135,6 @@ install:
 - sh: sudo ninja -C build/gtk4/_build install
 
 build_script:
-- sh: sudo ./gradlew :embed-python:runDebugExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
+- sh: cd kotlin-fortran
+- sh: sudo ./gradlew :libfort1:clean :libfort1:assemble runDebugExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
+- sh: cd ..
