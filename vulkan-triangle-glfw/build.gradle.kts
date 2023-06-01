@@ -27,8 +27,8 @@ kotlin {
             executable {
                 entryPoint = "plot.main"
                 when (preset) {
-					presets["mingwX64"] -> linkerOpts("-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib", "-L${project.rootDir}", "-lm", "-lc", "-ldl")
-					presets["linuxX64"] -> linkerOpts("-L${userHome}/.konan/dependencies/x86_64-unknown-linux-gnu-gcc-8.3.0-glibc-2.19-kernel-4.9-2/x86_64-unknown-linux-gnu/lib64","-L${userHome}/.konan/dependencies/x86_64-unknown-linux-gnu-gcc-8.3.0-glibc-2.19-kernel-4.9-2/x86_64-unknown-linux-gnu/sysroot/usr/lib","-L${project.rootDir}", "-lm", "-lc", "-ldl")
+					presets["mingwX64"] -> linkerOpts("-L${userHome}\\.konan\\dependencies\\msys2-mingw-w64-x86_64-2\\x86_64-w64-mingw32\\lib", "-L${project.rootDir}")
+					presets["linuxX64"] -> linkerOpts("-L${project.rootDir}")
 					presets["macosX64"] -> linkerOpts("-L${project.rootDir}")
 				}
             }
