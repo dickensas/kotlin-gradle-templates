@@ -19,6 +19,7 @@ install:
 - sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python3
 - sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python
 
+
 #pip
 - sh: sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 - sh: sudo python3 get-pip.py
