@@ -63,12 +63,6 @@ install:
 - sh: sudo apt-get -y install libpng-dev libpng++-dev libjpeg8-dev libjpeg-dev
 - sh: sudo mkdir -p build/mathgl-2.4.4
 
-#mathgl
-- sh: sudo wget --no-check-certificate -c "https://nchc.dl.sourceforge.net/project/mathgl/mathgl/mathgl 2.4.4/mathgl-2.4.4.tar.gz" -O - | sudo tar -xz -C build
-- sh: sudo mkdir -p build/mathgl-2.4.4/_build
-- sh: sudo cmake build/mathgl-2.4.4 -B build/mathgl-2.4.4/_build -DCMAKE_INSTALL_PREFIX=/usr -D enable-glut=on
-- sh: sudo cmake --build build/mathgl-2.4.4/_build --target install
-
 #gtk dependencies big install list
 - sh: sudo apt-get -y install libelf++0 libelf1 libelf-dev
 - sh: sudo apt-get -y install libxml2 libxml2-dev libxml2-utils 
@@ -108,7 +102,7 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkan/_build
-- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME=vulkanl
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME_CONFIG=vulkanl -DLIBRARY_OUTPUT_NAME=vulkanl --log-level=TRACE --trace
 - sh: sudo cmake --build build/vulkan/_build --target install
 - sh: sudo rm -fr build/vulkan
 
@@ -122,6 +116,6 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
 - sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkanl/_build
-- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME=vulkanlo
+- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME_CONFIG=vulkanlo -DLIBRARY_OUTPUT_NAME=vulkanlo --log-level=TRACE --trace
 - sh: sudo cmake --build build/vulkanl/_build --target install
 
