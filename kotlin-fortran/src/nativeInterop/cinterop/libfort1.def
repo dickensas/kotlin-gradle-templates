@@ -1,8 +1,8 @@
 package = libfort1
 
 libraryPaths = C:/msys64/mingw64/lib
-linkerOpts = -LC:/msys64/mingw64/lib -lfort1 -v
-compilerOpts = -LC:/msys64/mingw64/lib -lfort1 -v
+linkerOpts = -LC:/msys64/mingw64/lib -lfort1.dll -v
+compilerOpts = -LC:/msys64/mingw64/lib -lfort1.dll -v
 
 ---
 

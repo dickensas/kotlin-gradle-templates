@@ -5,4 +5,6 @@ pluginManagement {
     }
 }
 rootProject.name="kotlin-gradle-templates"
-include("vulkan-triangle-glfw")
+include("kotlin-fortran:libfort1")
+include("kotlin-fortran")
+include("embed-python")

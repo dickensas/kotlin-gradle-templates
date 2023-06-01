@@ -12,9 +12,6 @@ class CompiterArgumentsAction : Action<MutableList<String>> {
 		args.add("-o")
 		args.add("${project.name}.dll")
         args.add("-Wl,--out-implib,${project.name}.dll.a")
-        args.add("-Wl,--output-def,${project.name}.def")
-        args.add("-Wl,--export-all-symbols")
-        args.add("-Wl,--enable-auto-import")
 	}
 }
 
@@ -31,6 +28,7 @@ class PlatformToolChainAction : Action<GccPlatformToolChain> {
 fun buildFile(path: String) = layout.buildDirectory.file(path)
 
 library {
+	targetMachines.add(machines.linux.x86_64)
     targetMachines.add(machines.windows.x86_64)
     linkage.set(listOf(Linkage.SHARED))
     toolChains.configureEach {
@@ -74,10 +72,7 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
             	"-shared",
             	"-o",
             	"${project.name}.dll",
-            	"-Wl,--out-implib=${project.name}.dll.a", 
-                "-Wl,--export-all-symbols",
-                "-Wl,--enable-auto-import",
-                "-Wl,--output-def=${project.name}.def"
+            	"-Wl,--out-implib=${project.name}.dll.a"
             )
             else -> listOf()
         }

@@ -97,6 +97,7 @@ install:
 - sh: sudo apt-get -y install libgstreamer-gl1.0-0 libgstreamer1.0-0 libgstreamer1.0-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
+- sh: sudo apt-get -y install gfortran gfortran-10 gfortran-10-multilib
 
 #vulkan headers
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
@@ -105,7 +106,7 @@ install:
 - sh: export GCC_COVERAGE_COMPILE_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
-- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.2.131 -b v1.2.131
+- sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkan/_build
 - sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkan/_build --target install
@@ -119,7 +120,7 @@ install:
 - sh: export GCC_COVERAGE_LINK_FLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: sudo mkdir -p build/vulkanl
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
-- sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.2.131 -b v1.2.131
+- sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkanl/_build
 - sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkanl/_build --target install
@@ -160,4 +161,4 @@ install:
 - sh: sudo ninja -C build/gtk4/_build install
 
 build_script:
-- sh: sudo ./gradlew :vulkan-triangle-glfw:linkReleaseExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
+- sh: sudo ./gradlew :embed-python:runDebugExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
