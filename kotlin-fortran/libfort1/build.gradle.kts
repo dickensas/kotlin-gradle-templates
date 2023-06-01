@@ -14,6 +14,7 @@ class CompiterArgumentsAction : Action<MutableList<String>> {
 		args.add("-o")
 		if (hostOs.startsWith("Linux")) {
 			args.add("${project.name}.so")
+			args.add("-Wl,--out-implib,${project.name}.so")
 		}
 		if (hostOs.startsWith("Windows")) {
 			args.add("${project.name}.dll")
@@ -46,7 +47,8 @@ library {
         	"-v",
         	"-shared",
         	"-o",
-        	"${project.name}.so"
+        	"${project.name}.so",
+        	"-Wl,--out-implib=${project.name}.so"
         )
     }
     if (hostOs == "Linux") {
@@ -55,7 +57,8 @@ library {
         	"-v",
         	"-shared",
         	"-o",
-        	"${project.name}.so"
+        	"${project.name}.so",
+        	"-Wl,--out-implib=${project.name}.so"
         )
     }
     if (hostOs.startsWith("Windows")) {
