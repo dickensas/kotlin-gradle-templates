@@ -13,7 +13,7 @@ class CompiterArgumentsAction : Action<MutableList<String>> {
 		args.add("-shared")
 		args.add("-o")
 		if (hostOs.startsWith("Linux")) {
-			args.add("${project.name}.so")
+			args.add("${project.name}.o")
 		}
 		if (hostOs.startsWith("Windows")) {
 			args.add("${project.name}.dll")
