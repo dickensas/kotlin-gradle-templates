@@ -77,7 +77,7 @@ install:
 - sh: sudo apt-get -y install libxi-dev libxdamage-dev libxfixes-dev
 - sh: sudo apt-get -y install libxext-dev libxcursor-dev libfontconfig-dev
 - sh: sudo apt-get -y install libx11-dev libxft-dev libxext-dev libwayland-dev libpng-dev
-- sh: sudo apt-get -y install libc6-dev libc6 libc6-amd64
+- sh: sudo apt-get -y install libc6-dev libc6
 - sh: sudo apt-get -y install libpng-dev libjpeg-dev
 - sh: sudo apt-get -y install libspectre-dev libspectre1 libpixman-1-dev
 - sh: sudo apt-get -y install libxcb-shm0 libxcb-shm0-dev sysprof
@@ -98,6 +98,9 @@ install:
 - sh: sudo apt-get -y install libgstreamermm-1.0-1 libgstreamerd-3-0 libgstreamerd-3-dev
 - sh: sudo apt-get -y install libgstreamermm-1.0-dev llvm-spirv
 - sh: sudo apt-get -y install gfortran gfortran-10 gfortran-10-multilib
+
+#copy libfiles
+- sh: sudo cp /usr/lib/x86_64-linux-gnu/libm.so /usr/lib
 
 #reset cflags
 - sh: export CFLAGS=
@@ -136,5 +139,6 @@ install:
 
 build_script:
 - sh: cd kotlin-fortran
+- sh: sudo chmod 777 gradlew
 - sh: sudo ./gradlew :libfort1:clean :libfort1:assemble runDebugExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
 - sh: cd ..
