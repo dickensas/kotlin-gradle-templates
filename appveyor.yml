@@ -25,9 +25,6 @@ install:
 - sh: sudo python3 -m pip install --upgrade wheel
 
 #build tools
-- sh: sudo python3 -m pip install meson
-- sh: sudo python3 -m pip install ninja
-- sh: sudo python3 -m pip install cmake
 - sh: sudo mkdir -p build/gtk4
 - sh: sudo mkdir -p build/glib2
 - sh: sudo mkdir -p build/pango
@@ -36,8 +33,8 @@ install:
 - sh: sudo mkdir -p build/glibc
 
 #midi
-- sh: sudo apt-get -y install libjack-dev libtool bzip2 m4 automake
-- sh: sudo apt-get -y install libalsaplayer-dev libasound2-dev
+- sh: sudo apt-get -y install libjack-dev libtool bzip2 m4 automake cmake meson
+- sh: sudo apt-get -y install libalsaplayer-dev libasound2-dev ninja-build
 - sh: sudo mkdir -p build/rtmidi
 - sh: sudo git clone https://github.com/thestk/rtmidi.git build/rtmidi
 - sh: sudo git --work-tree=build/rtmidi --git-dir=build/rtmidi/.git checkout tags/4.0.0 -b 4.0.0
