@@ -18,6 +18,8 @@ install:
 - sh: sudo apt-get -y install python3.9-dev
 - sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python3
 - sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python
+- sh: sudo mv /usr/lib/python3 /usr/lib/python3_old
+- sh: sudo mv /usr/lib/python3.9 /usr/lib/python3
 
 
 #pip
