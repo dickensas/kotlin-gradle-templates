@@ -88,5 +88,30 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
     		from("${project.rootDir}/${project.name}/lib${project.name}.so")
     		into("${project.rootDir}")
     	}
+    	
+    	copy {
+    		from("${project.rootDir}/${project.name}/lib${project.name}.so")
+    		into("/usr/lib")
+    	}
     }
+}
+tasks.withType(Delete::class.java) {
+	if (hostOs.startsWith("Linux")) {
+		delete(fileTree("/usr/lib").matching {
+		    include("${project.name}.d*")
+		    include("${project.name}.so")
+		    include("lib${project.name}.so")
+			include("${project.name}.d*.*")
+		})
+	}
+	delete(fileTree("${project.rootDir}/${project.name}").matching {
+	    include("${project.name}.d*")
+	    include("${project.name}.so")
+		include("${project.name}.d*.*")
+	})
+	delete(fileTree("${project.rootDir}").matching {
+	    include("${project.name}.d*")
+	    include("${project.name}.so")
+		include("${project.name}.d*.*")
+	})
 }
