@@ -14,7 +14,6 @@ class CompiterArgumentsAction : Action<MutableList<String>> {
 		args.add("-o")
 		if (hostOs.startsWith("Linux")) {
 			args.add("${project.name}.so")
-			args.add("-Wl,--out-implib,${project.name}.so")
 		}
 		if (hostOs.startsWith("Windows")) {
 			args.add("${project.name}.dll")
@@ -47,8 +46,7 @@ library {
         	"-v",
         	"-shared",
         	"-o",
-        	"${project.name}.so",
-        	"-Wl,--out-implib=${project.name}.so"
+        	"${project.name}.so"
         )
     }
     if (hostOs == "Linux") {
@@ -57,8 +55,7 @@ library {
         	"-v",
         	"-shared",
         	"-o",
-        	"${project.name}.so",
-        	"-Wl,--out-implib=${project.name}.so"
+        	"${project.name}.so"
         )
     }
     if (hostOs.startsWith("Windows")) {
@@ -134,6 +131,13 @@ tasks.withType(LinkSharedLibrary::class.java).configureEach {
 	            })
 	            into("/usr/lib")
             }
+            copy {
+	        	from(fileTree("${project.rootDir}/${project.name}").matching {
+	                include("${project.name}.so")
+	            })
+	            into("/usr/lib")
+	            rename("${project.name}.so", "lib${project.name}.so")
+            }
         }
     }
 }
@@ -142,10 +146,16 @@ tasks.withType(Delete::class.java) {
 		delete(fileTree("/usr/lib").matching {
 		    include("${project.name}.d*")
 		    include("${project.name}.so")
+		    include("lib${project.name}.so")
 			include("${project.name}.d*.*")
 		})
 	}
 	delete(fileTree("${project.rootDir}/${project.name}").matching {
+	    include("${project.name}.d*")
+	    include("${project.name}.so")
+		include("${project.name}.d*.*")
+	})
+	delete(fileTree("${project.rootDir}").matching {
 	    include("${project.name}.d*")
 	    include("${project.name}.so")
 		include("${project.name}.d*.*")
