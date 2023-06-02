@@ -97,7 +97,7 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkan/_build
-- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_TOOLCHAIN_FILE=./toolchain.cmake -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_TOOLCHAIN_FILE=/home/appveyor/projects/kotlin-gradle-templates/toolchain.cmake -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkan/_build --target install
 - sh: sudo rm -fr build/vulkan
 
@@ -106,6 +106,6 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
 - sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkanl/_build
-- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_TOOLCHAIN_FILE=./toolchain.cmake -DCMAKE_INSTALL_PREFIX=/usr
+- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_TOOLCHAIN_FILE=/home/appveyor/projects/kotlin-gradle-templates/toolchain.cmake -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkanl/_build --target install
 
