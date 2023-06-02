@@ -16,11 +16,6 @@ install:
 - sh: sudo apt-get -y install libpython3.9 --fix-missing
 - sh: sudo apt-get -y install python3.9-full
 - sh: sudo apt-get -y install python3.9-dev
-- sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python3
-- sh: sudo ln -sf /usr/bin/python3.9 /usr/bin/python
-- sh: sudo mv /usr/lib/python3 /usr/lib/python3_old
-- sh: sudo mv /usr/lib/python3.9 /usr/lib/python3
-
 
 #pip
 - sh: sudo wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
@@ -99,6 +94,7 @@ install:
 - sh: sudo apt-get -y install gfortran gfortran-10 gfortran-10-multilib
 
 #vulkan headers
+- sh: export CXX="g++ -lm"
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
@@ -107,11 +103,12 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkan/_build
-- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME_CONFIG=vulkanl -DLIBRARY_OUTPUT_NAME=vulkanl --log-level=VERBOSE
-- sh: sudo cmake --build build/vulkan/_build --target install
+- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9 --log-level=VERBOSE
+- sh: sudo cmake --build build/vulkan/_build --target install -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9
 - sh: sudo rm -fr build/vulkan
 
 #vulkan loader
+- sh: export CXX="g++ -lm"
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
@@ -121,6 +118,6 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
 - sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkanl/_build
-- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr -DLIBRARY_OUTPUT_NAME_CONFIG=vulkanlo -DLIBRARY_OUTPUT_NAME=vulkanlo --log-level=VERBOSE
-- sh: sudo cmake --build build/vulkanl/_build --target install
+- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9 --log-level=VERBOSE
+- sh: sudo cmake --build build/vulkanl/_build --target install -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9
 
