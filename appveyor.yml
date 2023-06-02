@@ -109,3 +109,9 @@ install:
 - sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_TOOLCHAIN_FILE=/home/appveyor/projects/kotlin-gradle-templates/toolchain.cmake -DCMAKE_INSTALL_PREFIX=/usr
 - sh: sudo cmake --build build/vulkanl/_build --target install
 
+build_script:
+- sh: cd vulkan-triangle-glfw
+- sh: sudo chmod 777 gradlew
+- sh: sudo ./gradlew runDebugExecutableLibgnuplot --info --stacktrace --console=plain --max-workers=1 --no-daemon --build-cache -Dkotlin.colors.enabled=false -Dhttps.protocols=SSLv3,TLSv1,TLSv1.1,TLSv1.2 -Dpython_version=3.9
+- sh: cd ..
+
