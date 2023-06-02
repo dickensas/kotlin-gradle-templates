@@ -94,7 +94,8 @@ install:
 - sh: sudo apt-get -y install gfortran gfortran-10 gfortran-10-multilib
 
 #vulkan headers
-- sh: export CXX="g++ -lm"
+- sh: export CXX="g++ -ldl -lm"
+- sh: export CC="gcc -ldl -lm"
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
@@ -108,7 +109,8 @@ install:
 - sh: sudo rm -fr build/vulkan
 
 #vulkan loader
-- sh: export CXX="g++ -lm"
+- sh: export CXX="g++ -ldl -lm"
+- sh: export CC="gcc -ldl -lm"
 - sh: export CFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export CXXFLAGS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
 - sh: export LIBS="-lm -lstdc++ -lc -L/lib -L/lib/x86_64-linux-gnu -L/usr/lib -L/usr/lib/x86_64-linux-gnu"
