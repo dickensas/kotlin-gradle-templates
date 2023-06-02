@@ -103,8 +103,8 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Headers.git build/vulkan
 - sh: sudo git --work-tree=build/vulkan --git-dir=build/vulkan/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkan/_build
-- sh: sudo cmake build/vulkan -B build/vulkan/_build -DCMAKE_INSTALL_PREFIX=/usr -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9 --log-level=VERBOSE
-- sh: sudo cmake --build build/vulkan/_build --target install -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9
+- sh: sudo cmake build/vulkan -B build/vulkan/_build --log-level=VERBOSE
+- sh: sudo cmake --build build/vulkan/_build --target install --log-level=VERBOSE
 - sh: sudo rm -fr build/vulkan
 
 #vulkan loader
@@ -118,6 +118,6 @@ install:
 - sh: sudo git clone https://github.com/KhronosGroup/Vulkan-Loader.git build/vulkanl
 - sh: sudo git --work-tree=build/vulkanl --git-dir=build/vulkanl/.git checkout tags/v1.3.251 -b v1.3.251
 - sh: sudo mkdir -p build/vulkanl/_build
-- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9 --log-level=VERBOSE
-- sh: sudo cmake --build build/vulkanl/_build --target install -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.9.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.9/ -DPYTHON_EXECUTABLE=/usr/bin/python3.9
+- sh: sudo cmake build/vulkanl -B build/vulkanl/_build -DCMAKE_INSTALL_PREFIX=/usr --log-level=VERBOSE
+- sh: sudo cmake --build build/vulkanl/_build --target install --log-level=VERBOSE
 
