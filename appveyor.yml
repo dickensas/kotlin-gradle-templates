@@ -71,7 +71,7 @@ install:
 - sh: sudo apt-get -y install libxi-dev libxdamage-dev libxfixes-dev
 - sh: sudo apt-get -y install libxext-dev libxcursor-dev libfontconfig-dev
 - sh: sudo apt-get -y install libx11-dev libxft-dev libxext-dev libwayland-dev libpng-dev
-- sh: sudo apt-get -y install libc6-dev libc6
+- sh: sudo apt-get -y install libc6 libc6-dev
 - sh: sudo apt-get -y install libpng-dev libjpeg-dev
 - sh: sudo apt-get -y install libspectre-dev libspectre1 libpixman-1-dev
 - sh: sudo apt-get -y install libxcb-shm0 libxcb-shm0-dev sysprof
